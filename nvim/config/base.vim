@@ -24,6 +24,7 @@ set cmdheight=1
 set shortmess+=c
 set colorcolumn=80
 set mouse=a
+let mapleader = " "
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 hi CursorLineNr guifg=#050505
@@ -58,24 +59,16 @@ cnoreabbrev Qall qall
 
 com! W w
 
-augroup highlight_yank
-    autocmd!
-    autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank(timeuout = 200)
-augroup END
 
 
 
 
 xnoremap <leader>p "_dP
-
 nnoremap <leader>y "+y
 vnoremap <leader>y "+y
 nnoremap <leader>Y gg"+yG
-
 nnoremap <leader>d "_d
 vnoremap <leader>d "_d
-
-
 nnoremap <leader>m :MaximizerToggle<CR>
 nnoremap <leader>x :!chmod +x %<CR>
 nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>

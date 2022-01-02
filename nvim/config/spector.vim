@@ -3,7 +3,6 @@ let g:vimspector_enable_mappings='HUMAN'
 
 
 
-
 nmap <leader>dx :VimspectorReset<CR>
 nmap <leader>de :VimspectorEval
 nmap <leader>dw :VimspectorWatch<CR>

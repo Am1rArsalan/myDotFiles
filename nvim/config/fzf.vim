@@ -1,4 +1,3 @@
-
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
 let g:netrw_winsize = 25
@@ -20,3 +19,4 @@ let g:fzf_branch_actions = {
 nnoremap <C-p> :GFiles<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>pf :Files<CR>
+let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']

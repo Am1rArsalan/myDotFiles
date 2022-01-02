@@ -1,4 +1,3 @@
-
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 inoremap <silent><expr> <C-space> coc#refresh()
 nmap <leader>gd <Plug>(coc-definition)

@@ -48,7 +48,6 @@ Plug 'sbdchd/neoformat'
 " tree sitter ; 
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
 Plug 'nvim-treesitter/playground'
-
 Plug 'simrat39/symbols-outline.nvim'
 
 
@@ -56,7 +55,8 @@ Plug 'github/copilot.vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
 
-
+Plug 'ianks/vim-tsx'
 call plug#end() 
 
