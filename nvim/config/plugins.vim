@@ -59,8 +59,6 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'projekt0n/github-nvim-theme'
 
-
-" golang 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 
