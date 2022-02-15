@@ -2,7 +2,7 @@ syntax on
 set guicursor=
 set relativenumber
 set nohlsearch
-set hidden
+set hidden 
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -25,6 +25,9 @@ set shortmess+=c
 set colorcolumn=80
 set mouse=a
 let mapleader = " "
+set nuw=5
+
+" Default : "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 hi CursorLineNr guifg=#050505

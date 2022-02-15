@@ -30,3 +30,7 @@ autocmd FileType go nmap <leader>dbp :GoDebugBreakpoint<CR>
 autocmd FileType go nmap <leader>dco :GoDebugContinue<CR>
 
 nnoremap <Leader>ee oif err != nil {<CR>log.Fatalf("%+v\n", err)<CR>}<CR><esc>kkI<esc>
+
+
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
