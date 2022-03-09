@@ -1,15 +1,13 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "markdown",
     "typescript",
     "javascript",
-    "typescript",
     "javascriptreact",
     "typescriptreact",
     "json",
     "graphql",
-    "rust", 
-    "json"
+    "rust" , 
+    "css" , 
   ],
 
   "languageserver": {
@@ -18,5 +16,8 @@
       "rootPatterns": ["go.mod"],
       "filetypes": ["go"]
     }
-  }
+  },
+  "cSpell.userWords": [
+    "zoomit"
+  ]
 }

@@ -23,7 +23,6 @@ set cmdheight=1
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 set colorcolumn=80
-set mouse=a
 let mapleader = " "
 set nuw=5
 
@@ -32,7 +31,7 @@ set nuw=5
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 hi CursorLineNr guifg=#050505
 
-
+set clipboard=unnamedplus
 nnoremap <Leader><CR> :so ~/.config/nvim/init.vim<CR>
 let g:clipboard = {
             \   'name': 'myClipboard',

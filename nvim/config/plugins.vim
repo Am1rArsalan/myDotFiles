@@ -60,6 +60,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'projekt0n/github-nvim-theme'
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 
 call plug#end() 

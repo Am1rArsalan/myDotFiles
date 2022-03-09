@@ -1,6 +1,9 @@
 "let g:my_colorscheme= "gruvbox"
+let g:my_colorscheme= "tokyonight" 
+"let g:my_colorscheme= "ayu"
 "let g:my_colorscheme= "PaperColor"
-let g:my_colorscheme= "blue" 
+"let g:my_colorscheme= "github_light"
+"let g:my_colorscheme= "blue" 
 
 fun! ColorMyPencils()
     let g:gruvbox_contrast_dark = 'hard'
@@ -19,10 +22,11 @@ fun! ColorMyPencils()
     endif
 
     highlight CocHintFloat ctermfg=Blue guifg=#ff0000
-    highlight ColorColumn ctermbg=0 guibg=grey
+    highlight ColorColumn ctermbg=0 guibg=#000
+    "highlight ColorColumn ctermbg=0 guibg=grey
     hi SignColumn guibg=none
     hi CursorLineNR guibg=None
-   "highlight Normal guibg=none
+    highlight Normal guibg=none
     highlight LineNr guifg=#5eacd3
     highlight netrwDir guifg=#5eacd3
     highlight qfFileName guifg=#aed75f
