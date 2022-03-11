@@ -1,8 +1,8 @@
 "let g:my_colorscheme= "gruvbox"
-let g:my_colorscheme= "tokyonight" 
+"let g:my_colorscheme= "tokyonight" 
 "let g:my_colorscheme= "ayu"
 "let g:my_colorscheme= "PaperColor"
-"let g:my_colorscheme= "github_light"
+let g:my_colorscheme= "github_dimmed"
 "let g:my_colorscheme= "blue" 
 
 fun! ColorMyPencils()

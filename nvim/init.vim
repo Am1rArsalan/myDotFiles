@@ -18,13 +18,4 @@ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
 let loaded_matchparen = 1
 
 vnoremap X "_d
-"what is this ? 
-nmap <Leader>tu <Plug>BujoChecknormal
-nmap <Leader>th <Plug>BujoAddnormal
 
-
-
-" color 
-"
-"set background=light
-"colorscheme PaperColor

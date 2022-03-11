@@ -20,7 +20,6 @@ set termguicolors
 set scrolloff=8
 set noshowmode
 set cmdheight=1
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 set colorcolumn=80
 let mapleader = " "
