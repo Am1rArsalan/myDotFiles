@@ -1,31 +1,15 @@
-
-
-
-
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-
-
-
-export PATH=$PATH:/usr/local/go/bin
-
-
-
-
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
  #Set name of the theme to load --- if set to "random", it will
  export NVM_DIR=~/nvim-linux64/bin/nvim
  
- 
-
-
-
-
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
@@ -133,3 +117,12 @@ export PATH=/home/amir/.nvm/versions/node/v16.8.0/bin:/bin:/usr/bin:/usr/local/b
 source $HOME/.zsh_profile
 
 
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+alias vi="nvim"
+alias vim="nvim"

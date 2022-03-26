@@ -1,13 +1,15 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
+    "golang",
+    "go",
     "javascript",
     "javascriptreact",
     "typescriptreact",
     "json",
     "graphql",
     "rust" , 
-    "css" , 
+    "css"  
   ],
 
   "languageserver": {

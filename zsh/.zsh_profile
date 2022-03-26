@@ -5,16 +5,16 @@ VIM="nvim"
 #for i in `find -L $PERSONAL`; do
     #source $i
 #done
-
-
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export PATH=~/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
 #source /usr/share/doc/fzf/examples/key-bindings.zsh
 #source /usr/share/doc/fzf/examples/completion.zsh
 
-export NRDP="$HOME/work/nrdp"
 export CC="clang-10"
 export CXX="clang++-10"
 export PYTHONBREAKPOINT="pudb.set_trace"
-export GOPATH=$HOME/go
 export DARWINS_DIR="$HOME/work/darwins"
 export TVUI="$HOME/work/tvui"
 #export TENFOOTIDFILE=`ls ~/.ssh/id_*_tenfootui`
@@ -24,8 +24,6 @@ export EOSIO_INSTALL_DIR=$HOME/personal/eos
 export NF_IDFILE=$HOME/.idfile
 export DENO_INSTALL="$HOME/.deno"
 source $HOME/.cargo/env
-export PATH=$PATH:/usr/local/go/bin
-
 
 
 

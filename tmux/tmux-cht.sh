@@ -1,7 +1,3 @@
-
-
-
-
 selected=`cat ~/.tmux-cht-languages ~/.tmux-cht-command | fzf`
 read -p "enter query: " query
 
