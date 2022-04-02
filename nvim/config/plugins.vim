@@ -1,6 +1,8 @@
 
 call plug#begin('~/.vim/plugged')
 
+"grammer
+Plug 'rhysd/vim-grammarous'
 
 "typescript 
 Plug 'leafgarland/typescript-vim'
@@ -79,7 +81,7 @@ Plug 'simrat39/symbols-outline.nvim'
 Plug 'rust-lang/rust.vim'
 
 "glang 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 "debugging
 Plug 'mfussenegger/nvim-dap'

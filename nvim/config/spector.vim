@@ -27,6 +27,7 @@ lua <<EOF
       command = 'node',
       args = {os.getenv('HOME') .. '/personal/vscode-node-debug2/out/src/nodeDebug.js'},
     }
+
     dap.configurations.javascript = {
       {
         name = 'Launch',
@@ -47,7 +48,7 @@ lua <<EOF
       },
     }
 
-    dap.configurations.typescript= {
+    dap.configurations.typescript = {
       {
         name = 'Launch',
         type = 'node2',
