@@ -8,8 +8,9 @@
     "typescriptreact",
     "json",
     "graphql",
-    "rust" , 
-    "css"  
+    "rust", 
+    "css", 
+    "tsx"  
   ],
 
   "languageserver": {
@@ -20,6 +21,7 @@
     }
   },
   "cSpell.userWords": [
+    "Qazvin",
     "zoomit"
   ]
 }

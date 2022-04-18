@@ -23,7 +23,7 @@ set cmdheight=1
 set shortmess+=c
 set colorcolumn=80
 let mapleader = " "
-set nuw=5
+set nuw=4
 
 " Default : "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 

@@ -14,3 +14,13 @@ xmap <leader>vca  <Plug>(coc-codeaction-selected)
 nnoremap <leader>cr :CocRestart
 inoremap <C-c> <esc>
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
+
+nnoremap <leader>t  :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction 
