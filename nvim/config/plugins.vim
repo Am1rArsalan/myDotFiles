@@ -1,6 +1,14 @@
 
 call plug#begin('~/.vim/plugged')
 
+
+
+Plug 'vim-scripts/win9xblueback.vim'
+
+
+
+Plug 'Mofiqul/vscode.nvim'
+
 "grammer
 Plug 'rhysd/vim-grammarous'
 
@@ -74,14 +82,16 @@ Plug 'ellisonleao/glow.nvim'
 
 "tree sitter  
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  
-Plug 'nvim-treesitter/playground'
-Plug 'simrat39/symbols-outline.nvim'
+"Plug 'simrat39/symbols-outline.nvim'
+
+
 
 "rust 
 Plug 'rust-lang/rust.vim'
 
 "glang 
 "Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 
 "debugging
 Plug 'mfussenegger/nvim-dap'
@@ -107,23 +117,10 @@ Plug 'stsewd/fzf-checkout.vim'
 "dev icons
 Plug 'kyazdani42/nvim-web-devicons'
 
+Plug 'rafi/awesome-vim-colorschemes'
 
 call plug#end() 
 
 
-lua <<EOF
-    require'nvim-treesitter.configs'.setup {
-      ensure_installed = "typescript",     -- one of "all", "language", or a list of languages
-      highlight = {
-        enable = true,              -- false will disable the whole extension
-        disable = {},  -- list of language that will be disabled
-      },
-    }
-
-EOF
 
 
-    "require'nvim-treesitter.configs'.setup { 
-        "ensure_installed = "maintained", 
-        "highlight = { enable = true }
-    "}

@@ -1,7 +1,8 @@
 let g:my_colorscheme= "gruvbox"
-"let g:my_colorscheme= "tokyonight"
-"let g:my_colorscheme= "PaperColor"
-"let g:my_colorscheme= "blue" 
+"let g:my_colorscheme= "vscode"
+"let g:my_colorscheme= "win9xblueback"
+"
+
 
 fun! ColorMyPencils()
     let g:gruvbox_contrast_dark = 'hard'
@@ -19,7 +20,7 @@ fun! ColorMyPencils()
         colorscheme gruvbox
     endif
 
-    highlight CocHintFloat ctermfg=Blue guifg=#ff0000
+    highlight CocHintFloat ctermfg=Blue guifg=#ff0000 
     highlight ColorColumn ctermbg=0 guibg=#000
     "highlight ColorColumn ctermbg=0 guibg=grey
     hi SignColumn guibg=none
@@ -34,8 +35,6 @@ call ColorMyPencils()
 
 
 
-
-
 if has("gui_running")
     if has("gui_mac") || has("gui_macvim")
         set guifont=Menlo:h12
@@ -46,9 +45,7 @@ else
     let g:indentLine_concealcursor = 0
     let g:indentLine_char = '┆'
     let g:indentLine_faster = 1
-
-
-    if $COLORTERM == 'gnome-terminal'
+if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
     else
         if $TERM == 'xterm'

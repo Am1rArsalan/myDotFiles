@@ -1,13 +1,13 @@
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "typescript",
-  sync_install = false,
-  ignore_install = { "c#","haskell","jsonc" },
+  -- A list of parser names, or "all"
+  ensure_installed = { "typescript", "javascript", "rust", "go", "lua",  "tsx"},
+
+
   highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-    disable = { "c#"  },
-    additional_vim_regex_highlighting = false,
+       enable = true,
+       disable = { "c" },
   },
 }
+
 EOF
