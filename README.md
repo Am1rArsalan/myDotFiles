@@ -1,5 +1,8 @@
-# myDotFiles
-my zsh,vim,alacritty,tmux config
+# MyDotFiles
+   zsh
+   neovim
+   alacritty
+   tmux config
 
 
 
