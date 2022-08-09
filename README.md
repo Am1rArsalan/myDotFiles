@@ -4,5 +4,6 @@ my zsh,vim,alacritty,tmux config
 
 
 
-TODO:  
-  ** [] migrate to lua ** 
+**Todo** 
+   - [] migrate to lua 
+   - [] migrate to packer from vim-plug
