@@ -46,8 +46,3 @@ vim.cmd('cnoreabbrev Qall qall')
 --nnoremap <leader>x :!chmod +x %<CR>
 --nnoremap <leader>ghw :h <C-R>=expand("<cword>")<CR><CR>
 --nnoremap <leader>pw :Rg <C-R>=expand("<cword>")<CR><CR>
-
-
-
-
-

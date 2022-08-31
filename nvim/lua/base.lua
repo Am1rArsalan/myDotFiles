@@ -32,6 +32,7 @@ vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
 vim.cmd('set clipboard=unnamedplus') 
+vim.cmd('set mouse=a') 
 
 --vim.cmd("g:clipboard = {
 --\   'name': 'myClipboard',
