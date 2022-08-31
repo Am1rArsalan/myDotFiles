@@ -1,3 +1,0 @@
-print("in maps.lua") 
-
-

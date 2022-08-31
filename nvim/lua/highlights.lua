@@ -1,2 +1,0 @@
---highlight ColorColumn ctermbg=0 guibg=lightgrey
---hi CursorLineNr guifg=#050505
