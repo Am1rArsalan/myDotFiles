@@ -33,6 +33,10 @@ packer.startup(function(use)
 	}
 	-- theme 
 	use 'folke/tokyonight.nvim'
+    use {
+        'svrana/neosolarized.nvim',
+        requires = { 'tjdevries/colorbuddy.nvim' }
+    }
 
     -- lualine
 	use 'nvim-lualine/lualine.nvim' 
@@ -41,6 +45,7 @@ packer.startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate'
 	}
+    use 'nvim-treesitter/nvim-treesitter-context'
     -- auto close tag 
 	use 'windwp/nvim-ts-autotag'
     -- telescope    
