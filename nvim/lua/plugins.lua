@@ -78,6 +78,10 @@ packer.startup(function(use)
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
+
+
+    -- rustlang 
+    use 'simrat39/rust-tools.nvim'
 end)
 
 

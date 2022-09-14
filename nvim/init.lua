@@ -9,6 +9,7 @@ require('my_lsp_mason')
 require('my_lspsaga')
 require('my_lspkind')
 require('my_lsp_colors')
+require('my_rustconf')
 require('treesitter')
 require('tree_sitter_context')
 require('my_telescope') 
@@ -17,5 +18,3 @@ require('my_null_ls')
 require('git_config') 
 require('my_icons')
 require('debugger') 
-
-

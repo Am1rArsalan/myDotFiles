@@ -20,6 +20,8 @@ ts.setup {
     "rust",
     "go",
     "typescript",
+    "json",
+    "javascript",
   },
   autotag = {
     enable = true,
