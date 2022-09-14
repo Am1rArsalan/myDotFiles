@@ -8,5 +8,5 @@
 
 
 **Todo** 
-   - [] migrate to lua 
-   - [] migrate to packer from vim-plug
+   - [x] migrate to lua 
+   - [x] migrate to packer from vim-plug
