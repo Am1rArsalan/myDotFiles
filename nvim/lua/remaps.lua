@@ -1,12 +1,14 @@
 local remap = require("keymap")
 local nnoremap = remap.nnoremap
+local xnoremap = remap.xnoremap
+
 
 
 -- doesn't work
 nnoremap("<leader><CR>", "<cmd>so ~/.config/nvim/init.lua<CR>");
 
 
--- movements  
+-- movements
 nnoremap("<leader>h", "<cmd>wincmd h<CR>");
 nnoremap("<leader>j", "<cmd>wincmd j<CR>");
 nnoremap("<leader>k", "<cmd>wincmd k<CR>");
@@ -16,8 +18,11 @@ nnoremap("<leader>+", "<cmd>vertical resize +5<CR>");
 nnoremap("<leader>-", "<cmd>vertical resize -5<CR>");
 nnoremap("<leader>rp", "<cmd>vertical resize 100<CR>");
 
-nnoremap("<C-f>","<cmd>silent !tmux neww tmux-sessionizer<CR>")
-nnoremap ("<leader>u","<cmd>UndotreeShow<CR>")
+nnoremap("<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+nnoremap("<leader>u", "<cmd>UndotreeShow<CR>")
+xnoremap("<leader>p", "\"_dP")
+
+
 
 
 
