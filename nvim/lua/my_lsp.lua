@@ -182,8 +182,3 @@ function OrgImports(wait_ms)
 
 
 --autocmd BufWritePre *.go lua OrgImports(1000)
-
-
-
-
-

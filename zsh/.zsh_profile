@@ -26,7 +26,6 @@ export DENO_INSTALL="$HOME/.deno"
 source $HOME/.cargo/env
 
 
-
 # Where should I put you?
 bindkey -s ^f "tmux-sessionizer\n"
 

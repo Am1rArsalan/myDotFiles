@@ -14,15 +14,16 @@ packer.startup(function(use)
     use 'nvim-lua/plenary.nvim' 
     -- lsp 
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-	use({
-		"glepnir/lspsaga.nvim",
-		branch = "main" 
-	})
 	use 'onsails/lspkind-nvim'
 	use 'L3MON4D3/LuaSnip'
 	use 'hrsh7th/cmp-nvim-lsp'
 	use 'hrsh7th/cmp-buffer'
 	use 'hrsh7th/nvim-cmp'
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "version_2.2",
+    })
+
 	-- git 
 	use {
          	'lewis6991/gitsigns.nvim',
