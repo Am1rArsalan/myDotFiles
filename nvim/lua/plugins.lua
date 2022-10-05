@@ -21,7 +21,7 @@ packer.startup(function(use)
 	use 'hrsh7th/nvim-cmp'
     use({
         "glepnir/lspsaga.nvim",
-        branch = "version_2.2",
+        branch = "main",
     })
 
 	-- git 
