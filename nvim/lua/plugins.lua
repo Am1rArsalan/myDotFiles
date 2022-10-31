@@ -80,9 +80,15 @@ packer.startup(function(use)
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
 
+    -- code movement 
+    use 'fedepujol/move.nvim'
 
     -- rustlang 
     use 'simrat39/rust-tools.nvim'
+
+
+    -- 
+    use ({ 'projekt0n/github-nvim-theme' })
 end)
 
 

@@ -12,6 +12,8 @@ prettier.setup {
     "json",
     "scss",
     "less",
+    "lua",
+    "go",
   }, 
   config_precedence = "prefer-file", -- or "cli-override" or "file-override"
 }
