@@ -10,6 +10,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -156,7 +157,6 @@ bar {
         status_command i3status
 }
 
-exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle"
 
 #exec --no-startup-id "setxkbmap -model pc105 -layout us,ir -option grp:alt_shift_toggle"
 
@@ -169,7 +169,7 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lo.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/motor-5.jpg
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-1.jpg
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-2.jpg
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-3.jpg
@@ -177,22 +177,22 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-5.jpg
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-6.jpg
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-7.jpg
+#cool
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-8.jpg
+#cool
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-9.jpg
+#cool
 #exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-10j.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/lofus-11.jpg
+#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/b-1.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/b-2.jpg
 
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-1.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-2.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-3.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-4.png
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-5.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-6.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-7.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-9.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-10.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-11.jpg
-#exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-12.jpg
-exec_always --no-startup-id feh --bg-scale ~/Pictures/bgs/Bmw-8.jpg
+
+
+exec --no-startup-id "setxkbmap -model pc104 -layout us,ru -option grp:alt_shift_toggle"
+#exec_always "setxkbmap -model pc104 -layout us,ir -variant ,, -option grp:alt_shift_toggle"
 
 
 exec --no-startup-id picom -CGb
+exec_always --no-startup-id picom &
+
