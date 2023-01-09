@@ -1,4 +1,3 @@
-vim.opt.guicursor = ""
 vim.opt.nu = true
 vim.opt.relativenumber = true
 vim.opt.errorbells = false
@@ -31,9 +30,10 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 vim.g.mapleader = " "
 
+--vim.opt.guicursor = ""
 vim.cmd('set clipboard=unnamedplus') 
 vim.cmd('set mouse=a')
-
+vim.cmd('set guicursor=n-ci:hor30-iCursor-blinkwait300-blinkon200-blinkoff150') 
 
 
 local nnoremap = require('keymap').nnoremap

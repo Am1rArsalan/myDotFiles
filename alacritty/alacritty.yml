@@ -1,109 +1,114 @@
-font:
-  normal:
-      #family: Ubuntu Mono 
-      family: Fira Mono
-
+#font:
+  #normal:
+    #family: ubuntu mono
+#amir is here 
 window:
-  opacity : 0.95
+  opacity: 0.95
 
-# The definition of color schemes.
+cursor:
+  style:
+    shape: Underline 
+  vi_mode_style:
+    shape: Underline
+    #shape: Block
+
 schemes:
-  gruvbox_material_hard_dark: &gruvbox_material_hard_dark
+  schemes:
+  tokyo-night: &tokyo-night
     primary:
-      background: '#000000'
-      foreground: '#ffffff'
+      foreground: "#ffffff"
+      background: "#012430"
+      #background: "#000025"
+      #foreground: '0xa9b1d6'
+      #background: '0x1a1b26'
     normal:
-      black:   '#000000'
-      red:     '#fe0100'
-      green:   '#33ff00'
-      yellow:  '#feff00'
-      blue:    '#0066ff'
-      magenta: '#cc00ff'
-      cyan:    '#00ffff'
-      white:   '#d0d0d0'
+      black: "0x32344a"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xad8ee6"
+      cyan: "0x449dab"
+      white: "0x787c99"
     bright:
-      black:   '#808080'
-      red:     '#fe0100'
-      green:   '#33ff00'
-      yellow:  '#feff00'
-      blue:    '#0066ff'
-      magenta: '#cc00ff'
-      cyan:    '#00ffff'
-      white:   '#FFFFFF'
+      black: "0x444b6a"
+      red: "0xff7a93"
+      green: "0xb9f27c"
+      yellow: "0xff9e64"
+      blue: "0x7da6ff"
+      magenta: "0xbb9af7"
+      cyan: "0x0db9d7"
+      white: "0xacb0d0"
+  tokyo-night-storm: &tokyo-night-storm
+    primary:
+      #background: "0x24283b"
+      foreground: "0xa9b1d6"
+    normal:
+      black: "0x32344a"
+      red: "0xf7768e"
+      green: "0x9ece6a"
+      yellow: "0xe0af68"
+      blue: "0x7aa2f7"
+      magenta: "0xad8ee6"
+      cyan: "0x449dab"
+      white: "0x9699a8"
+    bright:
+      black: "0x444b6a"
+      red: "0xff7a93"
+      green: "0xb9f27c"
+      yellow: "0xff9e64"
+      blue: "0x7da6ff"
+      magenta: "0xbb9af7"
+      cyan: "0x0db9d7"
+      white: "0xacb0d0"
+  gruvbox: &gruvbox
+    primary:
+      foreground: "#ffffff"
+      #background: "#000000"
+      background: "#012456"
+      #background: '0x282828'
+      #foreground: '0xdfbf8e'
+    normal:
+      black: "#000000"
+      red: "#fe0100"
+      green: "#33ff00"
+      yellow: "#feff00"
+      blue: "#0066ff"
+      magenta: "#cc00ff"
+      cyan: "#00ffff"
+      white: "#d0d0d0"
+    bright:
+      black: "#808080"
+      red: "#fe0100"
+      green: "#33ff00"
+      yellow: "#feff00"
+      blue: "#0066ff"
+      magenta: "#cc00ff"
+      cyan: "#00ffff"
+      white: "#FFFFFF"
   dark:
     primary:
-      background: '#000000'
-      foreground: '#ffffff'
-
+      background: "#000000"
+      foreground: "#ffffff"
     normal:
-      black:   '#000000'
-      red:     '#fe0100'
-      green:   '#33ff00'
-      yellow:  '#feff00'
-      blue:    '#0066ff'
-      magenta: '#cc00ff'
-      cyan:    '#00ffff'
-      white:   '#d0d0d0'
+      black: "#000000"
+      red: "#fe0100"
+      green: "#33ff00"
+      yellow: "#feff00"
+      blue: "#0066ff"
+      magenta: "#cc00ff"
+      cyan: "#00ffff"
+      white: "#d0d0d0"
     bright:
-      black:   '#808080'
-      red:     '#fe0100'
-      green:   '#33ff00'
-      yellow:  '#feff00'
-      blue:    '#0066ff'
-      magenta: '#cc00ff'
-      cyan:    '#00ffff'
-      white:   '#FFFFFF'
-  solar: &solar
-    primary:
-      background: '0x002b36'
-      foreground: '0x93a1a1'
-
-    # Colors the cursor will use if `custom_cursor_colors` is true
-    cursor:
-      text: '0x002b36'
-      cursor: '0x93a1a1'
-
-    # Normal colors
-    normal:
-      black:   '0x002b36'
-      red:     '0xdc322f'
-      green:   '0x859900'
-      yellow:  '0xb58900'
-      blue:    '0x268bd2'
-      magenta: '0x6c71c4'
-      cyan:    '0x2aa198'
-      white:   '0x93a1a1'
-
-    # Bright colors
-    bright:
-      black:   '0x657b83'
-      red:     '0xdc322f'
-      green:   '0x859900'
-      yellow:  '0xb58900'
-      blue:    '0x268bd2'
-      magenta: '0x6c71c4'
-      cyan:    '0x2aa198'
-      white:   '0xfdf6e3'
-
-    indexed_colors:
-      - { index: 16, color: '0xcb4b16' }
-      - { index: 17, color: '0xd33682' }
-      - { index: 18, color: '0x073642' }
-      - { index: 19, color: '0x586e75' }
-      - { index: 20, color: '0x839496' }
-      - { index: 21, color: '0xeee8d5' }
-    primary:
-      background: '#1d1f21'
-      foreground: '#c5c8c6'
-
-    cursor:
-      text: '#1d1f21'
-      cursor: '#ffffff'
-
-
-
+      black: "#808080"
+      red: "#fe0100"
+      green: "#33ff00"
+      yellow: "#feff00"
+      blue: "#0066ff"
+      magenta: "#cc00ff"
+      cyan: "#00ffff"
+      white: "#FFFFFF"
 
 #Apply the color scheme.
-#colors: *gruvbox_material_hard_dark
-colors: *solar
-
+#colors: *gruvbox
+colors: *tokyo-night

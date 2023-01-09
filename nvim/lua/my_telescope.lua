@@ -71,6 +71,11 @@ vim.keymap.set('n', ';p',
 vim.keymap.set('n', ';r', function()
     builtin.live_grep()
 end)
+
+vim.keymap.set('n', '<leader>prw', function()
+    builtin.grep_string()
+end)
+
 vim.keymap.set('n', '\\\\', function()
     builtin.buffers()
 end)

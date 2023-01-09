@@ -32,12 +32,19 @@ packer.startup(function(use)
 	use {
 		'dinhhuy258/git.nvim'
 	}
+    use 'rbong/vim-flog'
+    use("TimUntersberger/neogit")
+    --copilot
+    --use 'github/copilot.vim'
+
 	-- theme 
 	use 'folke/tokyonight.nvim'
     use {
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
+
+    use 'NLKNguyen/papercolor-theme'
 
     -- lualine
 	use 'nvim-lualine/lualine.nvim' 
@@ -64,17 +71,12 @@ packer.startup(function(use)
     -- lsp :tailwindcss
     use { "williamboman/mason.nvim" }
     use { "williamboman/mason-lspconfig.nvim" }
-    --git
-    use 'rbong/vim-flog'
-    use("TimUntersberger/neogit")
     --airline and vim be god
     use 'vim-airline/vim-airline'
     --nerd tree
     use 'scrooloose/nerdcommenter'
     --undotree
     use 'mbbill/undotree'
-    --copilot
-    --use 'github/copilot.vim'
     -- debugger
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
