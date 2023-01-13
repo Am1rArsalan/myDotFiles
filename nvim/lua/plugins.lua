@@ -24,6 +24,9 @@ packer.startup(function(use)
         branch = "main",
     })
 
+    -- 
+    use 'eandrju/cellular-automaton.nvim' 
+
 	-- git 
 	use {
          	'lewis6991/gitsigns.nvim',
