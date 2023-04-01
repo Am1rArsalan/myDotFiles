@@ -12,6 +12,7 @@ packer.startup(function(use)
     use 'wbthomason/packer.nvim' 
     -- Common utilities
     use 'nvim-lua/plenary.nvim' 
+
     -- lsp 
     use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 	use 'onsails/lspkind-nvim'
@@ -38,7 +39,7 @@ packer.startup(function(use)
     use 'rbong/vim-flog'
     use("TimUntersberger/neogit")
     --copilot
-    --use 'github/copilot.vim'
+    use 'github/copilot.vim'
 
 	-- theme 
 	use 'folke/tokyonight.nvim'
@@ -70,7 +71,7 @@ packer.startup(function(use)
     use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
     use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
     -- devicons
-    --use 'kyazdani42/nvim-web-devicons' -- File icons
+    use 'kyazdani42/nvim-web-devicons' -- File icons
     -- lsp :tailwindcss
     use { "williamboman/mason.nvim" }
     use { "williamboman/mason-lspconfig.nvim" }
