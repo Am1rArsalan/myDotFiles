@@ -5,7 +5,7 @@ if (not status) then
 	return 
 end 
 
-vim.cmd [[packadd packer.nvim]] 
+vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function(use) 
     -- packer 
@@ -13,108 +13,102 @@ packer.startup(function(use)
     -- Common utilities
     use 'nvim-lua/plenary.nvim' 
 
-    -- lsp 
-    use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-	use 'onsails/lspkind-nvim'
-	use 'L3MON4D3/LuaSnip'
-	use 'hrsh7th/cmp-nvim-lsp'
-	use 'hrsh7th/cmp-buffer'
-	use 'hrsh7th/nvim-cmp'
-    use({
-        "glepnir/lspsaga.nvim",
-        branch = "main",
-    })
+   -- telescope    
+
+
+    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' } 
+
+   -- lsp configs
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v1.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},
+            {'williamboman/mason.nvim'},
+            {'williamboman/mason-lspconfig.nvim'},
+
+            -- Autocompletion
+            {'hrsh7th/nvim-cmp'},
+            {'hrsh7th/cmp-buffer'},
+            {'hrsh7th/cmp-path'},
+            {'saadparwaiz1/cmp_luasnip'},
+            {'hrsh7th/cmp-nvim-lsp'},
+            {'hrsh7th/cmp-nvim-lua'},
+
+            -- Snippets
+            {'L3MON4D3/LuaSnip'},
+            {'rafamadriz/friendly-snippets'},
+        }
+    }
 
     -- 
     use 'eandrju/cellular-automaton.nvim' 
 
-	-- git 
-	use {
-         	'lewis6991/gitsigns.nvim',
-		-- tag = 'release' -- To use the latest release
-	}
-	use {
-		'dinhhuy258/git.nvim'
-	}
+    -- git 
+    use {
+        'lewis6991/gitsigns.nvim',
+        -- tag = 'release' -- To use the latest release
+    }
+    use {
+        'dinhhuy258/git.nvim'
+    }
     use 'rbong/vim-flog'
     use("TimUntersberger/neogit")
     --copilot
     use 'github/copilot.vim'
 
-	-- theme 
-	use 'folke/tokyonight.nvim'
+    -- theme 
+    use 'folke/tokyonight.nvim'
     use {
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
 
-    use 'NLKNguyen/papercolor-theme'
-
     -- lualine
-	use 'nvim-lualine/lualine.nvim' 
+    use 'nvim-lualine/lualine.nvim' 
+
     -- treesitter
-	use {
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
-	}
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = function()
+            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+            ts_update()
+        end,}
+    use("nvim-treesitter/playground")
     use 'nvim-treesitter/nvim-treesitter-context'
-    -- auto close tag 
-	use 'windwp/nvim-ts-autotag'
-    -- telescope    
-	use {
-		'nvim-telescope/telescope.nvim', tag = '0.1.0',
-		-- or                            , branch = '0.1.x',
-		requires = { {'nvim-lua/plenary.nvim'} }
-	}
-	use { "nvim-telescope/telescope-file-browser.nvim" }
-    -- format code 
-    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
-    use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
-    -- devicons
-    use 'kyazdani42/nvim-web-devicons' -- File icons
-    -- lsp :tailwindcss
-    use { "williamboman/mason.nvim" }
-    use { "williamboman/mason-lspconfig.nvim" }
-    --airline and vim be god
-    use 'vim-airline/vim-airline'
-    --nerd tree
-    use 'scrooloose/nerdcommenter'
+    use("theprimeagen/harpoon")
+
     --undotree
     use 'mbbill/undotree'
+
+
+    -- format code 
+    use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+
+    -- devicons
+    use 'kyazdani42/nvim-web-devicons' -- File icons
+
+    --nerd commenter
+    use 'scrooloose/nerdcommenter'
+
     -- debugger
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
-    -- code movement 
-    use 'fedepujol/move.nvim'
+
     -- rustlang 
     use 'simrat39/rust-tools.nvim'
-    -- 
+
+    -- themes 
     use { "ellisonleao/gruvbox.nvim" }
     use ({ 'projekt0n/github-nvim-theme' })
+    use({ 'rose-pine/neovim' })
+
+
+    -- use("folke/zen-mode.nvim")
+    -- use("eandrju/cellular-automaton.nvim")
+    -- use("laytan/cloak.nvim")
+    -- use 'jose-elias-alvarez/null-ls.nvim'
 end)
-
-
-
-
--- auto tag 
-local status, autotag = pcall(require, "nvim-ts-autotag")
-if (not status) then return end
-autotag.setup({})
-
-
-
--- mason 
-local status, mason = pcall(require, "mason")
-if (not status) then return end
-local status2, lspconfig = pcall(require, "mason-lspconfig")
-if (not status2) then return end
-
-mason.setup({
-
-})
-
-lspconfig.setup {
-  ensure_installed = { "sumneko_lua", "tailwindcss" },
-}
 
