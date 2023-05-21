@@ -1,6 +1,9 @@
 local status, ts = pcall(require, "nvim-treesitter.configs")
 if (not status) then return end
 
+
+require"nvim-treesitter.install".compilers = {"gcc"}
+
 ts.setup {
   highlight = {
     enable = true,
@@ -11,14 +14,15 @@ ts.setup {
     disable = {},
   },
   ensure_installed = {
+    "c",
+    "lua",
+    "rust",
+    "go",
     "tsx",
     "toml",
     "yaml",
     "css",
     "html",
-    "lua",
-    "rust",
-    "go",
     "typescript",
     "json",
     "javascript",

@@ -1,5 +1,5 @@
-
 vim.g.mapleader = " "
+vim.g.localmapleader = " "
 vim.keymap.set("n", "sf", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -22,10 +22,10 @@ end)
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -50,14 +50,14 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 
-vim.keymap.set("n" , "<leader>h", "<cmd>wincmd h<CR>")
-vim.keymap.set("n" , "<leader>j", "<cmd>wincmd j<CR>")
-vim.keymap.set("n" , "<leader>k", "<cmd>wincmd k<CR>")
-vim.keymap.set("n" , "<leader>l", "<cmd>wincmd l<CR>")
+vim.keymap.set("n", "<leader>h", "<cmd>wincmd h<CR>")
+vim.keymap.set("n", "<leader>j", "<cmd>wincmd j<CR>")
+vim.keymap.set("n", "<leader>k", "<cmd>wincmd k<CR>")
+vim.keymap.set("n", "<leader>l", "<cmd>wincmd l<CR>")
 
-vim.keymap.set("n" , "<leader>+", "<cmd>vertical resize +5<CR>")
-vim.keymap.set("n" , "<leader>-", "<cmd>vertical resize -5<CR>")
-vim.keymap.set("n" , "<leader>rp", "<cmd>vertical resize 100<CR>")
+vim.keymap.set("n", "<leader>+", "<cmd>vertical resize +5<CR>")
+vim.keymap.set("n", "<leader>-", "<cmd>vertical resize -5<CR>")
+vim.keymap.set("n", "<leader>rp", "<cmd>vertical resize 100<CR>")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeShow<CR>")
 vim.cmd('cnoreabbrev W! w!')
@@ -72,4 +72,3 @@ vim.cmd('cnoreabbrev W1 w')
 vim.cmd('cnoreabbrev w1 w')
 vim.cmd('cnoreabbrev Q q')
 vim.cmd('cnoreabbrev Qall qall')
-

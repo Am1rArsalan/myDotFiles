@@ -1,5 +1,6 @@
 local builtin = require('telescope.builtin')
 
+
 -- keymaps
 vim.keymap.set('n', ';f', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.git_files, {})
