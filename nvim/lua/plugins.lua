@@ -14,7 +14,11 @@ packer.startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- telescope
-    use { 'nvim-telescope/telescope.nvim', tag = '0.1.1' }
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.1',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
+
 
     -- lsp configs
     use {
@@ -46,7 +50,6 @@ packer.startup(function(use)
     -- git
     use {
         'lewis6991/gitsigns.nvim',
-        -- tag = 'release' -- To use the latest release
     }
     use("TimUntersberger/neogit")
     use {
@@ -54,17 +57,8 @@ packer.startup(function(use)
     }
     use 'rbong/vim-flog'
 
-
-
     --copilot
     use 'github/copilot.vim'
-
-    -- theme
-    use 'folke/tokyonight.nvim'
-    use {
-        'svrana/neosolarized.nvim',
-        requires = { 'tjdevries/colorbuddy.nvim' }
-    }
 
     -- lualine
     use 'nvim-lualine/lualine.nvim'
@@ -84,7 +78,6 @@ packer.startup(function(use)
     --undotree
     use 'mbbill/undotree'
 
-
     -- format code
     use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
 
@@ -102,10 +95,30 @@ packer.startup(function(use)
     -- rustlang
     use 'simrat39/rust-tools.nvim'
 
+    -- golang
+    use 'ray-x/go.nvim'
+    use 'ray-x/guihua.lua'
+
+    -- test tree
+    use {
+        "nvim-neotest/neotest",
+        requires = {
+            "nvim-lua/plenary.nvim",
+            "nvim-treesitter/nvim-treesitter",
+            "antoinemadec/FixCursorHold.nvim",
+            "rouge8/neotest-rust",
+            "nvim-neotest/neotest-go",
+        }
+    }
+
     -- themes
     use { "ellisonleao/gruvbox.nvim" }
-    use({ 'projekt0n/github-nvim-theme' })
     use({ 'rose-pine/neovim' })
+    use 'folke/tokyonight.nvim'
+    use {
+        'svrana/neosolarized.nvim',
+        requires = { 'tjdevries/colorbuddy.nvim' }
+    }
 
 
     -- use("folke/zen-mode.nvim")
