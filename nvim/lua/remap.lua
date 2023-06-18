@@ -72,3 +72,7 @@ vim.cmd('cnoreabbrev W1 w')
 vim.cmd('cnoreabbrev w1 w')
 vim.cmd('cnoreabbrev Q q')
 vim.cmd('cnoreabbrev Qall qall')
+
+
+vim.keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
+vim.keymap.set("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>")
