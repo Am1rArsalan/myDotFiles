@@ -11,11 +11,11 @@ import (
 )
 
 const (
-	devicePath    = "/dev/input/event20" // Replace X with the appropriate event ID
-	dataFile      = "keypress_data.txt"  // File to store the keypress count
-	timeFormat    = "2006-01-02"         // Date format for tracking keypresses per day
-	saveInterval  = time.Minute          // Interval to save the keypress count to file
-	reportTimeout = time.Second          // Timeout for reporting the keypress count
+	devicePath    = "/dev/input/event20" 
+	dataFile      = "keypress_data.txt"  
+	timeFormat    = "2006-01-02"         
+	saveInterval  = time.Minute          
+	reportTimeout = time.Second          
 )
 
 func main() {
