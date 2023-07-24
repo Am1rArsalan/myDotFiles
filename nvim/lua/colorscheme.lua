@@ -1,6 +1,3 @@
-require('rose-pine').setup({
-    disable_background = true
-})
 
 function ColorMyPencils(color)
     vim.cmd('set background=dark')

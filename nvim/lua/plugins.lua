@@ -80,6 +80,7 @@ packer.startup(function(use)
 
     -- format code
     use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
+    use 'jose-elias-alvarez/null-ls.nvim'
 
     -- devicons
     use 'kyazdani42/nvim-web-devicons' -- File icons
@@ -119,10 +120,10 @@ packer.startup(function(use)
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
+    use({'overcache/NeoSolarized'})
 
 
     -- use("folke/zen-mode.nvim")
     -- use("eandrju/cellular-automaton.nvim")
     -- use("laytan/cloak.nvim")
-    -- use 'jose-elias-alvarez/null-ls.nvim'
 end)

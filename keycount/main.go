@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	devicePath    = "/dev/input/event20" 
+	devicePath    = "/dev/input/event3" 
 	dataFile      = "keypress_data.txt"  
 	timeFormat    = "2006-01-02"         
 	saveInterval  = time.Minute          
