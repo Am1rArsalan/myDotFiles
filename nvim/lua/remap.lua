@@ -60,6 +60,11 @@ vim.keymap.set("n", "<leader>-", "<cmd>vertical resize -5<CR>")
 vim.keymap.set("n", "<leader>rp", "<cmd>vertical resize 100<CR>")
 
 vim.keymap.set("n", "<leader>u", "<cmd>UndotreeShow<CR>")
+
+
+
+
+
 vim.cmd('cnoreabbrev W! w!')
 vim.cmd('cnoreabbrev Q! q!')
 vim.cmd('cnoreabbrev Qall! qall!')
@@ -76,3 +81,22 @@ vim.cmd('cnoreabbrev Qall qall')
 
 vim.keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
 vim.keymap.set("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>")
+
+
+-- handling golang erros babyeee
+
+function InsertIfErrSnippet()
+    local current_col = vim.fn.col('.')
+    local indent = vim.fn.indent('.')
+
+
+    local snippet = "if err != nil {\n"
+    snippet = snippet .. string.rep(' ', indent) .. "\n"
+    snippet = snippet .. string.rep(' ', indent) .. "\n"
+    snippet = snippet .. string.rep(' ', current_col - 1) .. "}"
+
+    vim.fn.append('.', { snippet })
+    vim.fn.feedkeys('kjj', 'n')
+end
+
+vim.keymap.set('n', '<leader>ee', ':lua InsertIfErrSnippet()<CR>', {silent = true, noremap = true})

@@ -204,15 +204,15 @@ _G.packer_plugins = {
     path = "/home/amir/.local/share/nvim/site/pack/packer/start/neotest-rust",
     url = "https://github.com/rouge8/neotest-rust"
   },
-  neovim = {
-    loaded = true,
-    path = "/home/amir/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
-  },
   nerdcommenter = {
     loaded = true,
     path = "/home/amir/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "https://github.com/scrooloose/nerdcommenter"
+  },
+  ["null-ls.nvim"] = {
+    loaded = true,
+    path = "/home/amir/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
+    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,

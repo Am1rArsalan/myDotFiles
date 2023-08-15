@@ -11,17 +11,23 @@ import (
 )
 
 const (
-	devicePath    = "/dev/input/event3" 
-	dataFile      = "keypress_data.txt"  
-	timeFormat    = "2006-01-02"         
-	saveInterval  = time.Minute          
-	reportTimeout = time.Second          
+	deviceBasePath = "/dev/input/event"
+	dataFile       = "keypress_data.txt"
+	timeFormat     = "2006-01-02"
+	saveInterval   = time.Minute
+	reportTimeout  = time.Second
 )
 
 func main() {
-	dev := openKeyboardDevice()
+	var device_event_number int
 
-	// Load previous keypress count from file
+	fmt.Println("please enter your device event number that you want to track")
+	fmt.Scanln(&device_event_number)
+
+	devicePath := fmt.Sprintf("%s%d", deviceBasePath, device_event_number)
+
+	dev := openKeyboardDevice(devicePath)
+
 	count, lastSavedTime, err := loadCountFromFile()
 	if err != nil {
 		log.Println("Failed to load previous count from file:", err)
@@ -29,14 +35,11 @@ func main() {
 		lastSavedTime = time.Now().Truncate(24 * time.Hour)
 	}
 
-	// Initialize the keypress count and current date
 	keypressCount := count
 
-	// Create a channel to receive signals for graceful termination
 	sigCh := make(chan os.Signal, 1)
 	signal.Notify(sigCh, os.Interrupt)
 
-	// Start monitoring key events
 	events := make(chan evdev.InputEvent)
 	errors := make(chan error)
 
@@ -72,7 +75,6 @@ func main() {
 				keypressCount = 0
 			}
 		case <-sigCh:
-			// Save the final count before exiting
 			err := saveCountToFile(keypressCount, lastSavedTime)
 			if err != nil {
 				log.Println("Failed to save count to file:", err)
@@ -81,10 +83,10 @@ func main() {
 			return
 		}
 	}
-}
+} 
 
-func openKeyboardDevice() *evdev.InputDevice {
-	// Open the keyboard device
+func openKeyboardDevice(devicePath string) *evdev.InputDevice {
+	fmt.Println("what is the device path", devicePath)
 	dev, err := evdev.Open(devicePath)
 	if err != nil {
 		log.Fatal(err)
@@ -92,7 +94,6 @@ func openKeyboardDevice() *evdev.InputDevice {
 	return dev
 }
 
-// Load previous keypress count from file
 func loadCountFromFile() (int, time.Time, error) {
 	data, err := os.ReadFile(dataFile)
 	if err != nil {
@@ -107,7 +108,6 @@ func loadCountFromFile() (int, time.Time, error) {
 	return count, lastSavedTime, nil
 }
 
-// Save the keypress count to file
 func saveCountToFile(count int, lastSavedTime time.Time) error {
 	data := []byte(fmt.Sprintf("%d %s", count, lastSavedTime))
 	err := os.WriteFile(dataFile, data, 0644)

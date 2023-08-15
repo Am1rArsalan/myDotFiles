@@ -79,8 +79,8 @@ packer.startup(function(use)
     use 'mbbill/undotree'
 
     -- format code
-    use 'MunifTanjim/prettier.nvim' -- Prettier plugin for Neovim's built-in LSP client
-    use 'jose-elias-alvarez/null-ls.nvim'
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 
     -- devicons
     use 'kyazdani42/nvim-web-devicons' -- File icons
@@ -92,6 +92,8 @@ packer.startup(function(use)
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
     use("theHamsta/nvim-dap-virtual-text")
+    use 'leoluz/nvim-dap-go' -- Install the plugin with Packer
+
 
     -- rustlang
     use 'simrat39/rust-tools.nvim'
@@ -114,16 +116,17 @@ packer.startup(function(use)
 
     -- themes
     use { "ellisonleao/gruvbox.nvim" }
-    use({ 'rose-pine/neovim' })
     use 'folke/tokyonight.nvim'
     use {
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
-    use({'overcache/NeoSolarized'})
+    use 'Mofiqul/vscode.nvim'
+    use 'shaunsingh/solarized.nvim'
 
 
     -- use("folke/zen-mode.nvim")
     -- use("eandrju/cellular-automaton.nvim")
     -- use("laytan/cloak.nvim")
+    -- use 'jose-elias-alvarez/null-ls.nvim'
 end)

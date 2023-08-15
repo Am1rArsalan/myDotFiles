@@ -13,7 +13,6 @@ prettier.setup {
         "scss",
         "less",
         "lua",
-        "go",
     },
     config_precedence = "prefer-file", -- or "cli-override" or "file-override"
 }
@@ -21,11 +20,12 @@ prettier.setup {
 
 
 
-vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-  callback = function()
-    vim.cmd("EslintFixAll")
-    vim.cmd("Prettier")
-  end,
-  group = autogroup_eslint_lsp,
-})
+----
+--vim.api.nvim_create_autocmd("BufWritePre", {
+  --pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+  --callback = function()
+    --vim.cmd("EslintFixAll")
+    --vim.cmd("Prettier")
+  --end,
+  --group = autogroup_eslint_lsp,
+--})
