@@ -3,7 +3,6 @@
    zsh
    i3 
    neovim
-   alacritty
    tmux 
 
 
