@@ -1,45 +1,45 @@
--- these are the algorithms and the data structures 
--- that usually will be needed when you are solving a problem 
-
 --Sorting Algorithms:
     --[x] Quick Sort
     --[x] Merge Sort
     --[x] Heap Sort
     --[x] Counting Sort
     --[x] Radix Sort 
+
 --Searching Algorithms:
     --[x] Binary Search
     --[x] Depth-First Search (DFS)
     --[x] Breadth-First Search (BFS)
+
 --Graph Algorithms:
     --[x] Dijkstra's Algorithm (Shortest Path)
     --[] Bellman-Ford Algorithm (Shortest Path with Negative Weights)
     --[] Floyd-Warshall Algorithm (All Pairs Shortest Path)
-    --Kruskal's Algorithm (Minimum Spanning Tree)
-    --Prim's Algorithm (Minimum Spanning Tree)
-    --Topological Sorting
-    --Tarjan's Algorithm (Strongly Connected Components)
+    --[] Kruskal's Algorithm (Minimum Spanning Tree)
+    --[] Prim's Algorithm (Minimum Spanning Tree)
+    --[] Topological Sorting
+    --[] Tarjan's Algorithm (Strongly Connected Components)
+
 --Dynamic Programming:
-    --Knapsack Problem
-    --Longest Common Subsequence (LCS)
-    --Longest Increasing Subsequence (LIS)
-    --Coin Change Problem
-    --Matrix Chain Multiplication
-    --Edit Distance
+    --[] Knapsack Problem
+    --[] Longest Common Subsequence (LCS)
+    --[] Longest Increasing Subsequence (LIS)
+    --[] Coin Change Problem
+    --[] Matrix Chain Multiplication
+    --[] Edit Distance
 
 --Data Structures:
-    --Arrays and Lists
-    --Stacks and Queues
-    --Priority Queues (Heaps)
-    --Hash Tables (HashMaps)
-    --Disjoint Set Union (Union-Find)
-    --Binary Trees and Binary Search Trees (BST)
-    --Segment Trees
-    --Fenwick Trees (Binary Indexed Trees)
+    --[] Arrays and Lists
+    --[] Stacks and Queues
+    --[] Priority Queues (Heaps)
+    --[] Hash Tables (HashMaps)
+    --[] Disjoint Set Union (Union-Find)
+    --[] Binary Trees and Binary Search Trees (BST)
+    --[] Segment Trees
+    --[] Fenwick Trees (Binary Indexed Trees)
 
 --String Algorithms:
-    --String Matching (e.g., KMP algorithm)
-    --Trie Data Structure
+    --[] String Matching (e.g., KMP algorithm)
+    --[] Trie Data Structure
     --Suffix Arrays and Suffix Trees
 
 --Number Theory:
