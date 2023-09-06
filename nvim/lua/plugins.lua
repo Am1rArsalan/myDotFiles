@@ -123,6 +123,7 @@ packer.startup(function(use)
     }
     use 'Mofiqul/vscode.nvim'
     use 'shaunsingh/solarized.nvim'
+    use 'joshdick/onedark.vim'
 
 
     -- use("folke/zen-mode.nvim")

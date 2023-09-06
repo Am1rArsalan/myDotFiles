@@ -9,7 +9,6 @@ require('colorscheme')
 require('treesitter')
 require('lualine')
 require('go_conf')
-require('icons')
 require('tree_sitter_context')
 require('prettier_conf')
 require('git_config')
@@ -17,3 +16,9 @@ require('debugger')
 require('null_ls')
 require('telescope_conf')
 require('harpoon_conf')
+require('cp_go') 
+
+
+
+
+
