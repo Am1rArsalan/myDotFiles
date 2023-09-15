@@ -16,9 +16,5 @@ require('debugger')
 require('null_ls')
 require('telescope_conf')
 require('harpoon_conf')
-require('cp_go') 
-
-
-
-
-
+require('cp_go')
+require('ts_config')

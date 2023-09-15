@@ -1,109 +1,115 @@
+-- these are the algorithms and the data structures
+-- that usually will be needed when you are solving a problem
+
 --Sorting Algorithms:
-    --[x] Quick Sort
-    --[x] Merge Sort
-    --[x] Heap Sort
-    --[x] Counting Sort
-    --[x] Radix Sort 
-
+--[X] Quick Sort
+--[X] Merge Sort
+--[X] Heap Sort
+--[X] Counting Sort
+--[X] RadiX Sort
 --Searching Algorithms:
-    --[x] Binary Search
-    --[x] Depth-First Search (DFS)
-    --[x] Breadth-First Search (BFS)
-
+--[X] Binary Search
+--[X] Depth-First Search (DFS)
+--[X] Breadth-First Search (BFS)
 --Graph Algorithms:
-    --[x] Dijkstra's Algorithm (Shortest Path)
-    --[] Bellman-Ford Algorithm (Shortest Path with Negative Weights)
-    --[] Floyd-Warshall Algorithm (All Pairs Shortest Path)
-    --[] Kruskal's Algorithm (Minimum Spanning Tree)
-    --[] Prim's Algorithm (Minimum Spanning Tree)
-    --[] Topological Sorting
-    --[] Tarjan's Algorithm (Strongly Connected Components)
-
+--[X] Dijkstra's Algorithm (Shortest Path)
+--[X] Bellman-Ford Algorithm (Shortest Path with Negative Weights)
+--[X] Floyd-Warshall Algorithm (All Pairs Shortest Path)
+--[X] Kruskal's Algorithm (Minimum Spanning Tree)
+--[] Prim's Algorithm (Minimum Spanning Tree)
+--Topological Sorting
+--Tarjan's Algorithm (Strongly Connected Components)
 --Dynamic Programming:
-    --[] Knapsack Problem
-    --[] Longest Common Subsequence (LCS)
-    --[] Longest Increasing Subsequence (LIS)
-    --[] Coin Change Problem
-    --[] Matrix Chain Multiplication
-    --[] Edit Distance
+--Knapsack Problem
+--Longest Common Subsequence (LCS)
+--Longest Increasing Subsequence (LIS)
+--Coin Change Problem
+--Matrix Chain Multiplication
+--Edit Distance
 
 --Data Structures:
-    --[] Arrays and Lists
-    --[] Stacks and Queues
-    --[] Priority Queues (Heaps)
-    --[] Hash Tables (HashMaps)
-    --[] Disjoint Set Union (Union-Find)
-    --[] Binary Trees and Binary Search Trees (BST)
-    --[] Segment Trees
-    --[] Fenwick Trees (Binary Indexed Trees)
+--Arrays and Lists
+--Stacks and Queues
+--Priority Queues (Heaps)
+--Hash Tables (HashMaps)
+--Disjoint Set Union (Union-Find)
+--Binary Trees and Binary Search Trees (BST)
+--Segment Trees
+--Fenwick Trees (Binary Indexed Trees)
 
 --String Algorithms:
-    --[] String Matching (e.g., KMP algorithm)
-    --[] Trie Data Structure
-    --Suffix Arrays and Suffix Trees
+--String Matching (e.g., KMP algorithm)
+--Trie Data Structure
+--Suffix Arrays and Suffix Trees
 
 --Number Theory:
-    --Sieve of Eratosthenes (Prime Numbers)
-    --Greatest Common Divisor (GCD)
-    --Least Common Multiple (LCM)
-    --Modular Arithmetic and Exponentiation
-    --Prime Factorization
-    --Fermat's Little Theorem
-    --Chinese Remainder Theorem
+--Sieve of Eratosthenes (Prime Numbers)
+--Greatest Common Divisor (GCD)
+--Least Common Multiple (LCM)
+--Modular Arithmetic and Exponentiation
+--Prime Factorization
+--Fermat's Little Theorem
+--Chinese Remainder Theorem
 
 --Geometry:
-    --Basic Geometric Operations (e.g., Point, Line, Circle)
-    --Convex Hull (e.g., Graham's Scan or Jarvis March)
-    --Line Intersection
+--Basic Geometric Operations (e.g., Point, Line, Circle)
+--Convex Hull (e.g., Graham's Scan or Jarvis March)
+--Line Intersection
 
 --Combinatorics:
-    --Permutations and Combinations
-    --Binomial Coefficients
-    --Inclusion-Exclusion Principle
+--Permutations and Combinations
+--Binomial Coefficients
+--Inclusion-Exclusion Principle
 
 --Advanced Data Structures:
-    --AVL Trees
-    --B-Trees
-    --Treap
-    --Trie (Prefix Tree)
-    --Bit Manipulation:
-    --Bitwise Operations
-    --Counting Set Bits
-    --Finding the Next/Previous Power of 2
-    --XOR Properties
+--AVL Trees
+--B-Trees
+--Treap
+--Trie (Prefix Tree)
+--Bit Manipulation:
+--Bitwise Operations
+--Counting Set Bits
+--Finding the Next/Previous Power of 2
+--XOR Properties
 
 --Game Theory:
-    --Nim Game
-    --Grundy Numbers
+--Nim Game
+--Grundy Numbers
 
 --Network Flow:
-    --Max Flow (Ford-Fulkerson Algorithm)
-    --Min Cut
-    --Bipartite Matching
+--Max Flow (Ford-Fulkerson Algorithm)
+--Min Cut
+--Bipartite Matching
 
 
--- sort algos 
+-- sort algos
 vim.api.nvim_set_keymap('n', '<leader>qs', [[:lua InsertQuickSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ms', [[:lua InsertMergeSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>hs', [[:lua InsertHeapSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cs', [[:lua InsertCountingSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rs', [[:lua InsertRadixSortSnippet()<CR>]], { noremap = true, silent = true })
 
--- search algos 
-vim.api.nvim_set_keymap('n', '<leader>bs', [[:lua InsertBinarySearchSnippet()<CR>]], { noremap = true, silent = true }) 
+-- search algos
+vim.api.nvim_set_keymap('n', '<leader>bs', [[:lua InsertBinarySearchSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dfs', [[:lua InsertDFSSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bfs', [[:lua ImportBFSSnippet()<CR>]], { noremap = true, silent = true })
 
 
 
 
--- dfs algo for matrix 
+
+
+-- dfs algo for matrix
 vim.api.nvim_set_keymap('n', '<leader>dfsm', [[:lua ImportDFSSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bfsm', [[:lua ImportBFSMatrixSnippet()<CR>]], { noremap = true, silent = true })
 
 
--- dijkstra 
+-- graph
 vim.api.nvim_set_keymap('n', '<leader>dij', [[:lua ImportDijkstra ()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>bell', [[:lua ImportBellmanFord()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>flw', [[:lua ImportFloydWarshall()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ka', [[:lua ImportKruskalAlgorithm()<CR>]], { noremap = true, silent = true })
+
 
 
 
@@ -160,10 +166,7 @@ function InsertQuickSortSnippet()
     vim.fn.append(current_line, "")
 end
 
-
-
-
--- merge sort 
+-- merge sort
 
 function InsertMergeSortSnippet()
     local current_line = vim.fn.line('.')
@@ -214,8 +217,6 @@ function InsertMergeSortSnippet()
     vim.fn.append(current_line + 1, mergeSnippet)
 end
 
-
-
 function InsertHeapSortSnippet()
     local current_line = vim.fn.line('.')
     local indent = vim.fn.indent(current_line)
@@ -249,7 +250,6 @@ function InsertHeapSortSnippet()
     local lines = vim.fn.split(snippet, '\n')
     vim.fn.append(current_line, lines)
 end
-
 
 function InsertCountingSortSnippet()
     local current_line = vim.fn.line('.')
@@ -296,7 +296,6 @@ function InsertCountingSortSnippet()
     vim.fn.append(current_line, lines)
 end
 
-
 function InsertRadixSortSnippet()
     local current_line = vim.fn.line('.')
     local indent = vim.fn.indent(current_line)
@@ -337,8 +336,6 @@ function InsertRadixSortSnippet()
     local lines = vim.fn.split(snippet, '\n')
     vim.fn.append(current_line, lines)
 end
-
-
 
 function InsertBinarySearchSnippet()
     local current_line = vim.fn.line('.')
@@ -389,8 +386,8 @@ function ImportDFSSnippet()
     -- Define your DFS snippet template here
     local dfsTemplate = [[
 var Directions = [][]int{
-    {-1, 0}, 
-    {1, 0}, 
+    {-1, 0},
+    {1, 0},
     {0, -1},
     {0, 1},
 }
@@ -429,8 +426,6 @@ func dfsMatrix(matrix [][]int) {
         vim.fn.append(line - 1 + i, snippetLine)
     end
 end
-
-
 
 -- bfs graph
 function ImportBFSSnippet()
@@ -477,9 +472,7 @@ func (g *Graph) BFS(startVertex int) {
     end
 end
 
-
-
--- bfs matrix 
+-- bfs matrix
 function ImportBFSMatrixSnippet()
     local Template = [[
     import (
@@ -628,5 +621,387 @@ func findMinVertex(distances map[int]int, visited map[int]bool) int {
     end
 end
 
+function ImportBellmanFord()
+    local Template =
+    [[
+import (
+	"fmt"
+	"math"
+)
 
--- 
+type Edge struct {
+	source, destination, weight int
+}
+
+type Graph struct {
+	vertices, edges int
+	edgeList       []Edge
+}
+
+func NewGraph(vertices, edges int) *Graph {
+	return &Graph{
+		vertices: vertices,
+		edges:    edges,
+		edgeList: make([]Edge, 0),
+	}
+}
+
+func (g *Graph) AddEdge(source, destination, weight int) {
+	g.edgeList = append(g.edgeList, Edge{source, destination, weight})
+}
+
+func BellmanFord(graph *Graph, startVertex int) ([]int, []int) {
+	distances := make([]int, graph.vertices)
+	parents := make([]int, graph.vertices)
+
+	for i := range distances {
+		distances[i] = math.MaxInt32
+		parents[i] = -1
+	}
+
+	distances[startVertex] = 0
+
+	for i := 1; i <= graph.vertices-1; i++ {
+		for _, edge := range graph.edgeList {
+			u, v, weight := edge.source, edge.destination, edge.weight
+			if distances[u] != math.MaxInt32 && distances[u]+weight < distances[v] {
+				distances[v] = distances[u] + weight
+				parents[v] = u
+			}
+		}
+	}
+
+	// Check for negative weight cycles
+	for _, edge := range graph.edgeList {
+		u, v, weight := edge.source, edge.destination, edge.weight
+		if distances[u] != math.MaxInt32 && distances[u]+weight < distances[v] {
+			fmt.Println("Graph contains negative weight cycle")
+		}
+	}
+
+	return distances, parents
+}
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+
+--Shortest distances between all pairs of vertices:
+function ImportFloydWarshall()
+    local Template =
+    [[
+import (
+	"fmt"
+	"math"
+)
+
+type Graph struct {
+	vertices int
+	matrix   [][]int
+}
+
+func NewGraph(vertices int) *Graph {
+	matrix := make([][]int, vertices)
+	for i := range matrix {
+		matrix[i] = make([]int, vertices)
+		for j := range matrix[i] {
+			if i == j {
+				matrix[i][j] = 0
+			} else {
+				matrix[i][j] = math.MaxInt32
+			}
+		}
+	}
+	return &Graph{
+		vertices: vertices,
+		matrix:   matrix,
+	}
+}
+
+func (g *Graph) AddEdge(source, destination, weight int) {
+	g.matrix[source][destination] = weight
+}
+
+func FloydWarshall(graph *Graph) [][]int {
+	distances := make([][]int, graph.vertices)
+	for i := range distances {
+		distances[i] = make([]int, graph.vertices)
+		copy(distances[i], graph.matrix[i])
+	}
+
+	for k := 0; k < graph.vertices; k++ {
+		for i := 0; i < graph.vertices; i++ {
+			for j := 0; j < graph.vertices; j++ {
+				if distances[i][k]+distances[k][j] < distances[i][j] {
+					distances[i][j] = distances[i][k] + distances[k][j]
+				}
+			}
+		}
+	}
+
+	return distances
+}
+
+func main() {
+	vertices := 4
+	graph := NewGraph(vertices)
+
+	graph.AddEdge(0, 1, 3)
+	graph.AddEdge(0, 2, 6)
+	graph.AddEdge(1, 2, 2)
+	graph.AddEdge(1, 3, 1)
+	graph.AddEdge(2, 1, 1)
+	graph.AddEdge(2, 3, 4)
+	graph.AddEdge(3, 0, 2)
+	graph.AddEdge(3, 2, 5)
+
+	distances := FloydWarshall(graph)
+
+	fmt.Println("Shortest distances between all pairs of vertices:")
+	for i := 0; i < vertices; i++ {
+		for j := 0; j < vertices; j++ {
+			fmt.Printf("From vertex %d to vertex %d: Distance %d\n", i, j, distances[i][j])
+		}
+	}
+}
+
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportKruskalAlgorithm()
+    local Template =
+[[ 
+
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+// Edge represents an edge in the graph.
+type Edge struct {
+	u, v, weight int
+}
+
+// Kruskal's algorithm to find the Minimum Spanning Tree.
+func kruskal(graph []Edge, numVertices int) []Edge {
+	// Sort the edges in ascending order of weight.
+	sort.Slice(graph, func(i, j int) bool {
+		return graph[i].weight < graph[j].weight
+	})
+
+	// Create a parent array to keep track of connected components.
+	parent := make([]int, numVertices)
+	for i := range parent {
+		parent[i] = i
+	}
+
+	// Initialize variables to track MST edges and total weight.
+	var mst []Edge
+	var mstWeight int
+
+	// Function to find the root of a tree.
+	findRoot := func(vertex int) int {
+		for vertex != parent[vertex] {
+			vertex = parent[vertex]
+		}
+		return vertex
+	}
+
+	// Iterate through the sorted edges and add them to the MST if they don't create a cycle.
+	for _, edge := range graph {
+		rootU := findRoot(edge.u)
+		rootV := findRoot(edge.v)
+
+		// If adding this edge doesn't create a cycle, include it in the MST.
+		if rootU != rootV {
+			mst = append(mst, edge)
+			mstWeight += edge.weight
+
+			// Merge the two components.
+			parent[rootU] = rootV
+		}
+	}
+
+	return mst
+}
+
+func main() {
+	// Example graph represented as a slice of edges (u, v, weight).
+	graph := []Edge{
+		{0, 1, 4},
+		{0, 7, 8},
+		{1, 2, 8},
+		{1, 7, 11},
+		{2, 3, 7},
+		{2, 5, 4},
+		{2, 8, 2},
+		{3, 4, 9},
+		{3, 5, 14},
+		{4, 5, 10},
+		{5, 6, 2},
+		{6, 7, 1},
+		{6, 8, 6},
+		{7, 8, 7},
+	}
+
+	numVertices := 9
+
+	// Find the Minimum Spanning Tree using Kruskal's algorithm.
+	mst := kruskal(graph, numVertices)
+
+	// Print the MST edges and total weight.
+	fmt.Println("Minimum Spanning Tree edges:")
+	for _, edge := range mst {
+		fmt.Printf("(%d, %d) Weight: %d\n", edge.u, edge.v, edge.weight)
+	}
+}
+
+]]
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+
+function ImportPrimesAlgorithm()  
+local Template = [[
+    package main
+
+import (
+	"container/heap"
+	"fmt"
+)
+
+// Edge represents an edge in the graph.
+type Edge struct {
+	vertex int
+	weight int
+}
+
+// Graph represents a graph using an adjacency list.
+type Graph map[int][]Edge
+
+// Item represents an item in the priority queue.
+type Item struct {
+	vertex int
+	weight int
+	index  int
+}
+
+// PriorityQueue is a min-heap based priority queue.
+type PriorityQueue []*Item
+
+func (pq PriorityQueue) Len() int { return len(pq) }
+
+func (pq PriorityQueue) Less(i, j int) bool {
+	return pq[i].weight < pq[j].weight
+}
+
+func (pq PriorityQueue) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
+	pq[i].index = i
+	pq[j].index = j
+}
+
+func (pq *PriorityQueue) Push(x interface{}) {
+	n := len(*pq)
+	item := x.(*Item)
+	item.index = n
+	*pq = append(*pq, item)
+}
+
+func (pq *PriorityQueue) Pop() interface{} {
+	old := *pq
+	n := len(old)
+	item := old[n-1]
+	item.index = -1 // for safety
+	*pq = old[0 : n-1]
+	return item
+}
+
+// Prim's algorithm to find the Minimum Spanning Tree.
+func prim(graph Graph) []Edge {
+	visited := make(map[int]bool)
+	pq := make(PriorityQueue, 0)
+
+	// Start from an arbitrary vertex (e.g., vertex 0).
+	startVertex := 0
+	visited[startVertex] = true
+
+	// Initialize the priority queue with edges from the starting vertex.
+	for _, edge := range graph[startVertex] {
+		heap.Push(&pq, &Item{edge.vertex, edge.weight, 0})
+	}
+
+	var mst []Edge
+
+	for len(pq) > 0 {
+		// Extract the edge with the minimum weight from the priority queue.
+		item := heap.Pop(&pq).(*Item)
+		v := item.vertex
+		w := item.weight
+
+		// If the destination vertex is already visited, skip it.
+		if visited[v] {
+			continue
+		}
+
+		// Mark the destination vertex as visited and add the edge to the MST.
+		visited[v] = true
+		mst = append(mst, Edge{v, w})
+
+		// Add adjacent edges to the priority queue.
+		for _, edge := range graph[v] {
+			if !visited[edge.vertex] {
+				heap.Push(&pq, &Item{edge.vertex, edge.weight, 0})
+			}
+		}
+	}
+
+	return mst
+}
+
+func main() {
+	// Example graph represented as an adjacency list.
+	graph := make(Graph)
+	graph[0] = []Edge{{1, 2}, {2, 4}}
+	graph[1] = []Edge{{0, 2}, {2, 1}, {3, 3}}
+	graph[2] = []Edge{{0, 4}, {1, 1}, {3, 5}}
+	graph[3] = []Edge{{1, 3}, {2, 5}}
+
+	// Find the Minimum Spanning Tree using Prim's algorithm.
+	mst := prim(graph)
+
+	// Print the MST edges.
+	fmt.Println("Minimum Spanning Tree edges:")
+	for _, edge := range mst {
+		fmt.Printf("(%d, %d) Weight: %d\n", 0, edge.vertex, edge.weight)
+	}
+}
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
