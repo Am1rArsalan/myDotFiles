@@ -1,50 +1,24 @@
 -- these are the algorithms and the data structures
 -- that usually will be needed when you are solving a problem
 
---Sorting Algorithms:
---[X] Quick Sort
---[X] Merge Sort
---[X] Heap Sort
---[X] Counting Sort
---[X] RadiX Sort
---Searching Algorithms:
---[X] Binary Search
---[X] Depth-First Search (DFS)
---[X] Breadth-First Search (BFS)
---Graph Algorithms:
---[X] Dijkstra's Algorithm (Shortest Path)
---[X] Bellman-Ford Algorithm (Shortest Path with Negative Weights)
---[X] Floyd-Warshall Algorithm (All Pairs Shortest Path)
---[X] Kruskal's Algorithm (Minimum Spanning Tree)
---[] Prim's Algorithm (Minimum Spanning Tree)
---Topological Sorting
---Tarjan's Algorithm (Strongly Connected Components)
---Dynamic Programming:
---Knapsack Problem
---Longest Common Subsequence (LCS)
---Longest Increasing Subsequence (LIS)
---Coin Change Problem
---Matrix Chain Multiplication
---Edit Distance
-
 --Data Structures:
---Arrays and Lists
---Stacks and Queues
---Priority Queues (Heaps)
---Hash Tables (HashMaps)
---Disjoint Set Union (Union-Find)
---Binary Trees and Binary Search Trees (BST)
---Segment Trees
---Fenwick Trees (Binary Indexed Trees)
+--[x] Stacks and Queues
+--[x] Linked List
+--[] Priority Queues (Heaps)
+--[] Hash Tables (HashMaps)
+--[] Disjoint Set Union (Union-Find)
+--[] Binary Trees and Binary Search Trees (BST)
+--[] Segment Trees
+--[] Fenwick Trees (Binary Indexed Trees)
 
 --String Algorithms:
---String Matching (e.g., KMP algorithm)
---Trie Data Structure
---Suffix Arrays and Suffix Trees
+--[] String Matching (e.g., KMP algorithm)
+--[] Trie Data Structure >>>>> nary tree
+--[] Suffix Arrays and Suffix Trees >>>>> I know nothing about this
 
 --Number Theory:
---Sieve of Eratosthenes (Prime Numbers)
---Greatest Common Divisor (GCD)
+-- [] Sieve of Eratosthenes (Prime Numbers)
+-- [] Greatest Common Divisor (GCD)
 --Least Common Multiple (LCM)
 --Modular Arithmetic and Exponentiation
 --Prime Factorization
@@ -88,27 +62,42 @@ vim.api.nvim_set_keymap('n', '<leader>ms', [[:lua InsertMergeSortSnippet()<CR>]]
 vim.api.nvim_set_keymap('n', '<leader>hs', [[:lua InsertHeapSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>cs', [[:lua InsertCountingSortSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>rs', [[:lua InsertRadixSortSnippet()<CR>]], { noremap = true, silent = true })
-
 -- search algos
 vim.api.nvim_set_keymap('n', '<leader>bs', [[:lua InsertBinarySearchSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>dfs', [[:lua InsertDFSSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bfs', [[:lua ImportBFSSnippet()<CR>]], { noremap = true, silent = true })
-
-
-
-
-
-
 -- dfs algo for matrix
 vim.api.nvim_set_keymap('n', '<leader>dfsm', [[:lua ImportDFSSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bfsm', [[:lua ImportBFSMatrixSnippet()<CR>]], { noremap = true, silent = true })
-
-
 -- graph
-vim.api.nvim_set_keymap('n', '<leader>dij', [[:lua ImportDijkstra ()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>bell', [[:lua ImportBellmanFord()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>flw', [[:lua ImportFloydWarshall()<CR>]], { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>ka', [[:lua ImportKruskalAlgorithm()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gdi', [[:lua ImportDijkstra ()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gbel', [[:lua ImportBellmanFord()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gflw', [[:lua ImportFloydWarshall()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gka', [[:lua ImportKruskalAlgorithm()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gpa', [[:lua ImportPrimesAlgorithm()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gto', [[:lua ImportTopologicalSortAlgorithm()<CR>]],
+    { noremap = true, silent = true })
+--- SCCs
+vim.api.nvim_set_keymap('n', '<leader>gta', [[:lua ImportTarjanAlgorithm()<CR>]], { noremap = true, silent = true })
+
+-- Dynamic programming
+vim.api.nvim_set_keymap('n', '<leader>dks', [[:lua ImportKnapsackAlgorithm()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dlcs', [[:lua ImportLCS()<CR>]], { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>dles', [[:lua ImportLIS()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dmc', [[:lua ImportMinimomCoinChange()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dmm', [[:lua ImportMatrixChainMultiplication()<CR>]],
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>ded', [[:lua ImportMatrixChainMultiplication()<CR>]],
+    { noremap = true, silent = true })
+
+-- data structures
+vim.api.nvim_set_keymap('n', '<leader>qu', [[:lua ImportMatrixChainMultiplication()<CR>]],
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>st', [[:lua ImportMatrixChainMultiplication()<CR>]],
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>lli', [[:lua ImportMatrixChainMultiplication()<CR>]],
+    { noremap = true, silent = true })
 
 
 
@@ -691,7 +680,6 @@ func BellmanFord(graph *Graph, startVertex int) ([]int, []int) {
     end
 end
 
-
 --Shortest distances between all pairs of vertices:
 function ImportFloydWarshall()
     local Template =
@@ -783,7 +771,7 @@ end
 
 function ImportKruskalAlgorithm()
     local Template =
-[[ 
+    [[
 
 package main
 
@@ -880,10 +868,9 @@ func main() {
     end
 end
 
-
-function ImportPrimesAlgorithm()  
-local Template = [[
-    package main
+function ImportPrimesAlgorithm()
+    local Template = [[
+package main
 
 import (
 	"container/heap"
@@ -1001,6 +988,801 @@ func main() {
     local cursor = vim.fn.getcurpos()
     local line = cursor[2]
 
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportTopologicalSortAlgorithm()
+    local Template = [[
+
+package main
+
+import (
+    "fmt"
+)
+
+type Graph struct {
+    vertices int
+    adjacencyList map[int][]int
+}
+
+func NewGraph(vertices int) *Graph {
+    return &Graph{
+        vertices: vertices,
+        adjacencyList: make(map[int][]int),
+    }
+}
+
+func (g *Graph) AddEdge(u, v int) {
+    g.adjacencyList[u] = append(g.adjacencyList[u], v)
+}
+
+func (g *Graph) topologicalSortUtil(v int, visited map[int]bool, stack *[]int) {
+    visited[v] = true
+
+    for _, neighbor := range g.adjacencyList[v] {
+        if !visited[neighbor] {
+            g.topologicalSortUtil(neighbor, visited, stack)
+        }
+    }
+
+    *stack = append(*stack, v)
+}
+
+func (g *Graph) TopologicalSort() []int {
+    visited := make(map[int]bool)
+    stack := []int{}
+
+    for i := 0; i < g.vertices; i++ {
+        if !visited[i] {
+            g.topologicalSortUtil(i, visited, &stack)
+        }
+    }
+
+    // Reverse the stack to get the topological order
+    result := make([]int, 0, len(stack))
+    for i := len(stack) - 1; i >= 0; i-- {
+        result = append(result, stack[i])
+    }
+
+    return result
+}
+
+func main() {
+    g := NewGraph(6)
+    g.AddEdge(5, 2)
+    g.AddEdge(5, 0)
+    g.AddEdge(4, 0)
+    g.AddEdge(4, 1)
+    g.AddEdge(2, 3)
+    g.AddEdge(3, 1)
+
+    sortedOrder := g.TopologicalSort()
+
+    fmt.Println("Topological Sort:")
+    for _, vertex := range sortedOrder {
+        fmt.Printf("%d ", vertex)
+    }
+    fmt.Println()
+}
+
+
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportTarjanAlgorithm()
+    local Template = [[
+
+package main
+
+import (
+    "fmt"
+)
+
+type Graph struct {
+    vertices int
+    adjacencyList map[int][]int
+    time        int
+    ids         []int
+    low         []int
+    onStack     []bool
+    stack       []int
+    sccs        [][]int
+}
+
+func NewGraph(vertices int) *Graph {
+    return &Graph{
+        vertices:     vertices,
+        adjacencyList: make(map[int][]int),
+        time:        0,
+        ids:         make([]int, vertices),
+        low:         make([]int, vertices),
+        onStack:     make([]bool, vertices),
+    }
+}
+
+func (g *Graph) AddEdge(u, v int) {
+    g.adjacencyList[u] = append(g.adjacencyList[u], v)
+}
+
+func (g *Graph) tarjan(v int) {
+    g.ids[v] = g.time
+    g.low[v] = g.time
+    g.time++
+    g.stack = append(g.stack, v)
+    g.onStack[v] = true
+
+    for _, w := range g.adjacencyList[v] {
+        if g.ids[w] == -1 {
+            g.tarjan(w)
+            if g.low[w] < g.low[v] {
+                g.low[v] = g.low[w]
+            }
+        } else if g.onStack[w] && g.ids[w] < g.low[v] {
+            g.low[v] = g.ids[w]
+        }
+    }
+
+    if g.ids[v] == g.low[v] {
+        scc := []int{}
+        for {
+            w := g.stack[len(g.stack)-1]
+            g.stack = g.stack[:len(g.stack)-1]
+            g.onStack[w] = false
+            scc = append(scc, w)
+            if w == v {
+                break
+            }
+        }
+        g.sccs = append(g.sccs, scc)
+    }
+}
+
+func (g *Graph) StronglyConnectedComponents() [][]int {
+    for i := 0; i < g.vertices; i++ {
+        if g.ids[i] == -1 {
+            g.tarjan(i)
+        }
+    }
+    return g.sccs
+}
+
+func main() {
+    g := NewGraph(8)
+    g.AddEdge(0, 1)
+    g.AddEdge(1, 2)
+    g.AddEdge(2, 0)
+    g.AddEdge(3, 4)
+    g.AddEdge(4, 5)
+    g.AddEdge(5, 3)
+    g.AddEdge(2, 6)
+    g.AddEdge(6, 7)
+
+    sccs := g.StronglyConnectedComponents()
+
+    fmt.Println("Strongly Connected Components:")
+    for _, scc := range sccs {
+        fmt.Println(scc)
+    }
+}
+]]
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportKnapsackAlgorithm()
+    local Template = [[
+package main
+
+import (
+    "fmt"
+)
+// knapsackDP finds the maximum value that can be obtained given the weight capacity
+// and a list of items with weights and values.
+func knapsackDP(weights, values []int, capacity int) int {
+    n := len(weights)
+
+    // Create a 2D slice to store the results of subproblems
+    dp := make([][]int, n+1)
+    for i := range dp {
+        dp[i] = make([]int, capacity+1)
+    }
+
+    // Fill the dp table using bottom-up dynamic programming
+    for i := 1; i <= n; i++ {
+        for w := 1; w <= capacity; w++ {
+            // If the current item's weight exceeds the current capacity, skip it
+            if weights[i-1] > w {
+                dp[i][w] = dp[i-1][w]
+            } else {
+                // Otherwise, choose the maximum value between including and excluding the item
+                dp[i][w] = max(dp[i-1][w], values[i-1]+dp[i-1][w-weights[i-1]]
+
+
+
+    local Template2 = [[ )
+            }
+        }
+    }
+
+    // The value in the bottom-right cell represents the maximum value
+    return dp[n][capacity]
+}
+
+// max returns the maximum of two integers
+func max(a, b int) int {
+    if a > b {
+        return a
+    }
+    return b
+}
+
+func main() {
+    weights := []int{2, 2, 3, 4, 5}
+    values := []int{3, 4, 5, 8, 10}
+    capacity := 7
+
+    maxVal := knapsackDP(weights, values, capacity)
+    fmt.Printf("Maximum value that can be obtained: %d\n", maxVal)
+}
+]];
+
+    Template = Template .. "]]"
+    Template = Template .. Template2
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportLCS()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+func longestCommonSubsequence(text1 string, text2 string) string {
+	m, n := len(text1), len(text2)
+	dp := make([][]int, m+1)
+	for i := range dp {
+		dp[i] = make([]int, n+1)
+	}
+
+	for i := 1; i <= m; i++ {
+		for j := 1; j <= n; j++ {
+			if text1[i-1] == text2[j-1] {
+				dp[i][j] = dp[i-1][j-1] + 1
+			} else {
+				dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+			}
+		}
+	}
+
+	// Reconstruct the LCS
+	i, j := m, n
+	lcsLen := dp[m][n]
+	lcs := make([]byte, lcsLen)
+
+	for i > 0 && j > 0 {
+		if text1[i-1] == text2[j-1] {
+			lcs[lcsLen-1] = text1[i-1]
+			i--
+			j--
+			lcsLen--
+		} else if dp[i-1][j] > dp[i][j-1] {
+			i--
+		} else {
+			j--
+		}
+	}
+
+	return string(lcs)
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func main() {
+	text1 := "AGGTAB"
+	text2 := "GXTXAYB"
+	lcs := longestCommonSubsequence(text1, text2)
+	fmt.Printf("Longest Common Subsequence: %s\n", lcs)
+}
+]]
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportLIS()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+func longestIncreasingSubsequence(nums []int) []int {
+	if len(nums) == 0 {
+		return nil
+	}
+
+	dp := make([]int, len(nums))
+	parent := make([]int, len(nums))
+
+	maxLength := 1
+	endIndex := 0
+
+	for i := 0; i < len(nums); i++ {
+		dp[i] = 1
+		parent[i] = -1
+
+		for j := 0; j < i; j++ {
+			if nums[i] > nums[j] && dp[i] < dp[j]+1 {
+				dp[i] = dp[j] + 1
+				parent[i] = j
+			}
+		}
+
+		if dp[i] > maxLength {
+			maxLength = dp[i]
+			endIndex = i
+		}
+	}
+
+	// Reconstruct the LIS
+	lis := make([]int, 0, maxLength)
+	for endIndex != -1 {
+		lis = append(lis, nums[endIndex])
+		endIndex = parent[endIndex]
+	}
+
+	// Reverse the LIS to get the correct order
+	reverse(lis)
+
+	return lis
+}
+
+func reverse(nums []int) {
+	left, right := 0, len(nums)-1
+	for left < right {
+		nums[left], nums[right] = nums[right], nums[left]
+		left++
+		right--
+	}
+}
+
+func main() {
+	nums := []int{10, 22, 9, 33, 21, 50, 41, 60, 80}
+	lis := longestIncreasingSubsequence(nums)
+	fmt.Printf("Longest Increasing Subsequence: %v\n", lis)
+}
+]]
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportMinimomCoinChange()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func minCoins(coins []int, amount int) int {
+	// Create a slice to store minimum coin counts for each amount from 0 to 'amount'
+	dp := make([]int, amount+1)
+
+	// Initialize the values in the dp slice to a maximum value (impossible value)
+	for i := range dp {
+		dp[i] = math.MaxInt32
+	}
+
+	// Base case: 0 coins needed to make an amount of 0
+	dp[0] = 0
+
+	// Iterate through all possible amounts from 1 to 'amount'
+	for i := 1; i <= amount; i++ {
+		// Try all coin denominations
+		for _, coin := range coins {
+			// Check if the coin can be used to make the current amount 'i'
+			if i-coin >= 0 {
+				// If using the current coin reduces the number of coins needed, update dp[i]
+				dp[i] = min(dp[i], dp[i-coin]+1)
+			}
+		}
+	}
+
+	// If dp[amount] is still at its initial value (impossible value), it means it's not possible to make the amount.
+	if dp[amount] == math.MaxInt32 {
+		return -1
+	}
+
+	return dp[amount]
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func main() {
+	coins := []int{1, 2, 5}
+	amount := 11
+	minimumCoins := minCoins(coins, amount)
+
+	if minimumCoins == -1 {
+		fmt.Println("It's not possible to make the amount with the given coins.")
+	} else {
+		fmt.Printf("Minimum number of coins needed to make %d: %d\n", amount, minimumCoins)
+	}
+}
+  ]]
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportMatrixChainMultiplication()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+func matrixChainOrder(p []int) int {
+	n := len(p) - 1 // Number of matrices
+	m := make([][]int, n)
+	for i := range m {
+		m[i] = make([]int, n)
+	}
+
+	// `m[i][j]` will store the minimum number of scalar multiplications needed
+	// to compute the matrix product A[i]A[i+1]...A[j]
+	for length := 2; length <= n; length++ {
+		for i := 0; i <= n-length+1; i++ {
+			j := i + length - 1
+			m[i][j] = 1 << 31 // Initialize to a large value (maximum integer)
+			for k := i; k < j; k++ {
+				cost := m[i][k] + m[k+1][j] + p[i]*p[k+1]*p[j+1]
+				if cost < m[i][j] {
+					m[i][j] = cost
+				}
+			}
+		}
+	}
+
+	return m[0][n-1] // Minimum number of scalar multiplications needed for the entire chain
+}
+
+func main() {
+	// Example: Suppose you have matrices with dimensions 10x30, 30x5, 5x60
+	// The 'p' array represents the dimensions of these matrices.
+	p := []int{10, 30, 5, 60}
+	minMultiplications := matrixChainOrder(p)
+	fmt.Printf("Minimum number of scalar multiplications: %d\n", minMultiplications)
+}
+
+    ]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportEditDistanceAlgo()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+func minDistance(word1 string, word2 string) int {
+	m, n := len(word1), len(word2)
+	// Create a 2D slice to store the edit distances
+	dp := make([][]int, m+1)
+	for i := range dp {
+		dp[i] = make([]int, n+1)
+	}
+
+	// Initialize the first row and first column
+	for i := 0; i <= m; i++ {
+		dp[i][0] = i
+	}
+	for j := 0; j <= n; j++ {
+		dp[0][j] = j
+	}
+
+	// Fill in the matrix
+	for i := 1; i <= m; i++ {
+		for j := 1; j <= n; j++ {
+			cost := 1 // Cost of a single operation (insertion, deletion, or substitution)
+			if word1[i-1] == word2[j-1] {
+				cost = 0 // Characters match, no need for substitution
+			}
+			dp[i][j] = min(dp[i-1][j]+1, dp[i][j-1]+1, dp[i-1][j-1]+cost)
+		}
+	}
+
+	// The bottom-right cell contains the minimum edit distance
+	return dp[m][n]
+}
+
+func min(a, b, c int) int {
+	if a <= b && a <= c {
+		return a
+	} else if b <= a && b <= c {
+		return b
+	}
+	return c
+}
+
+func main() {
+	word1 := "intention"
+	word2 := "execution"
+	distance := minDistance(word1, word2)
+	fmt.Printf("Minimum Edit Distance between '%s' and '%s' is %d\n", word1, word2, distance)
+}
+
+    ]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportStack()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+type Stack struct {
+	data []interface{}
+}
+
+func (s *Stack) Push(item interface{}) {
+	s.data = append(s.data, item)
+}
+
+func (s *Stack) Pop() interface{} {
+	if len(s.data) == 0 {
+		return nil // Stack is empty
+	}
+	item := s.data[len(s.data)-1]
+	s.data = s.data[:len(s.data)-1]
+	return item
+}
+
+func (s *Stack) Peek() interface{} {
+	if len(s.data) == 0 {
+		return nil // Stack is empty
+	}
+	return s.data[len(s.data)-1]
+}
+
+func (s *Stack) IsEmpty() bool {
+	return len(s.data) == 0
+}
+
+func main() {
+	stack := Stack{}
+
+	// Push elements onto the stack
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+
+	// Peek at the top element
+	fmt.Println("Peek:", stack.Peek())
+
+	// Pop elements from the stack
+	fmt.Println("Pop:", stack.Pop())
+	fmt.Println("Pop:", stack.Pop())
+	fmt.Println("Pop:", stack.Pop())
+	fmt.Println("Pop:", stack.Pop()) // Trying to pop from an empty stack
+
+	// Check if the stack is empty
+	fmt.Println("Is Empty:", stack.IsEmpty())
+}
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportQueue()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+type Queue struct {
+	data []interface{}
+}
+
+func (q *Queue) Enqueue(item interface{}) {
+	q.data = append(q.data, item)
+}
+
+func (q *Queue) Dequeue() interface{} {
+	if len(q.data) == 0 {
+		return nil // Queue is empty
+	}
+	item := q.data[0]
+	q.data = q.data[1:]
+	return item
+}
+
+func (q *Queue) IsEmpty() bool {
+	return len(q.data) == 0
+}
+
+func main() {
+	queue := Queue{}
+
+	// Enqueue elements
+	queue.Enqueue(1)
+	queue.Enqueue(2)
+	queue.Enqueue(3)
+
+	// Dequeue elements
+	fmt.Println("Dequeue:", queue.Dequeue())
+	fmt.Println("Dequeue:", queue.Dequeue())
+	fmt.Println("Dequeue:", queue.Dequeue())
+	fmt.Println("Dequeue:", queue.Dequeue()) // Trying to dequeue from an empty queue
+
+	// Check if the queue is empty
+	fmt.Println("Is Empty:", queue.IsEmpty())
+}
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportLinkedList()
+    local Template = [[
+      package main
+
+import (
+	"fmt"
+)
+
+// Node represents a single element in the linked list.
+type Node struct {
+	data interface{}
+	next *Node
+}
+
+// LinkedList represents the linked list itself.
+type LinkedList struct {
+	head *Node
+}
+
+// Insert adds a new element to the end of the linked list.
+func (ll *LinkedList) Insert(data interface{}) {
+	newNode := &Node{data: data, next: nil}
+
+	if ll.head == nil {
+		ll.head = newNode
+		return
+	}
+
+	current := ll.head
+	for current.next != nil {
+		current = current.next
+	}
+	current.next = newNode
+}
+
+// Delete removes the first occurrence of the specified element from the linked list.
+func (ll *LinkedList) Delete(data interface{}) {
+	if ll.head == nil {
+		return
+	}
+
+	if ll.head.data == data {
+		ll.head = ll.head.next
+		return
+	}
+
+	current := ll.head
+	for current.next != nil && current.next.data != data {
+		current = current.next
+	}
+
+	if current.next == nil {
+		return // Element not found
+	}
+
+	current.next = current.next.next
+}
+
+// Display prints the elements of the linked list.
+func (ll *LinkedList) Display() {
+	current := ll.head
+	for current != nil {
+		fmt.Print(current.data, " ")
+		current = current.next
+	}
+	fmt.Println()
+}
+
+func main() {
+	ll := LinkedList{}
+
+	// Insert elements
+	ll.Insert(1)
+	ll.Insert(2)
+	ll.Insert(3)
+	ll.Insert(4)
+
+	// Display the linked list
+	fmt.Print("Linked List: ")
+	ll.Display()
+
+	// Delete an element
+	ll.Delete(3)
+
+	// Display the linked list after deletion
+	fmt.Print("Linked List after deletion: ")
+	ll.Display()
+}
+
+    ]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
     for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
         vim.fn.append(line - 1 + i, snippetLine)
     end
