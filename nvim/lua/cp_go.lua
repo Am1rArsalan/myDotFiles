@@ -2,10 +2,6 @@
 -- that usually will be needed when you are solving a problem
 
 --Data Structures:
---[x] Stacks and Queues
---[x] Linked List
---[] Priority Queues (Heaps)
---[] Hash Tables (HashMaps)
 --[] Disjoint Set Union (Union-Find)
 --[] Binary Trees and Binary Search Trees (BST)
 --[] Segment Trees
@@ -92,13 +88,17 @@ vim.api.nvim_set_keymap('n', '<leader>ded', [[:lua ImportMatrixChainMultiplicati
     { noremap = true, silent = true })
 
 -- data structures
-vim.api.nvim_set_keymap('n', '<leader>qu', [[:lua ImportMatrixChainMultiplication()<CR>]],
+vim.api.nvim_set_keymap('n', '<leader>qu', [[:lua ImportQueue()<CR>]],
     { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>st', [[:lua ImportMatrixChainMultiplication()<CR>]],
+vim.api.nvim_set_keymap('n', '<leader>st', [[:lua ImportStack()<CR>]],
     { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>lli', [[:lua ImportMatrixChainMultiplication()<CR>]],
+vim.api.nvim_set_keymap('n', '<leader>lli', [[:lua ImportLinkedList()<CR>]],
     { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>pq', [[:lua ImportPQ()<CR>]],
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>dsu', [[:lua ImportDSU()<CR>]],
+    { noremap = true, silent = true })
 
 
 
@@ -1781,6 +1781,154 @@ func main() {
 
     ]]
 
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportPQ()
+    local Template = [[
+package main
+
+import (
+	"container/heap"
+	"fmt"
+)
+
+// Item represents an item with a priority in the priority queue.
+type Item struct {
+	value    interface{}
+	priority int
+	index    int // Index in the heap
+}
+
+// PriorityQueue implements a min-heap priority queue.
+type PriorityQueue []*Item
+
+// Len returns the number of items in the priority queue.
+func (pq PriorityQueue) Len() int {
+	return len(pq)
+}
+
+// Less compares two items based on their priorities.
+func (pq PriorityQueue) Less(i, j int) bool {
+	return pq[i].priority < pq[j].priority
+}
+
+// Swap swaps two items in the priority queue.
+func (pq PriorityQueue) Swap(i, j int) {
+	pq[i], pq[j] = pq[j], pq[i]
+	pq[i].index = i
+	pq[j].index = j
+}
+
+// Push adds an item to the priority queue.
+func (pq *PriorityQueue) Push(x interface{}) {
+	item := x.(*Item)
+	item.index = len(*pq)
+	*pq = append(*pq, item)
+}
+
+// Pop removes and returns the item with the highest priority from the priority queue.
+func (pq *PriorityQueue) Pop() interface{} {
+	old := *pq
+	n := len(old)
+	item := old[n-1]
+	item.index = -1
+	*pq = old[0 : n-1]
+	return item
+}
+
+func main() {
+	pq := make(PriorityQueue, 0)
+
+	// Insert elements with priorities into the priority queue
+	heap.Push(&pq, &Item{value: "Task 1", priority: 3})
+	heap.Push(&pq, &Item{value: "Task 2", priority: 1})
+	heap.Push(&pq, &Item{value: "Task 3", priority: 2})
+
+	// Pop elements from the priority queue based on their priority
+	for pq.Len() > 0 {
+		item := heap.Pop(&pq).(*Item)
+		fmt.Printf("Priority: %d, Value: %s\n", item.priority, item.value)
+	}
+}
+
+    ]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+    for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
+end
+
+function ImportDSU()
+    local Template = [[
+package main
+
+import (
+	"fmt"
+)
+
+type DSU struct {
+	parent []int
+	size   []int
+}
+
+func NewDSU(n int) *DSU {
+	parent := make([]int, n)
+	size := make([]int, n)
+
+	for i := 0; i < n; i++ {
+		parent[i] = i
+		size[i] = 1
+	}
+
+	return &DSU{parent, size}
+}
+
+func (dsu *DSU) Find(x int) int {
+	if dsu.parent[x] != x {
+		dsu.parent[x] = dsu.Find(dsu.parent[x]) // Path compression
+	}
+	return dsu.parent[x]
+}
+
+func (dsu *DSU) Union(x, y int) {
+	rootX := dsu.Find(x)
+	rootY := dsu.Find(y)
+
+	if rootX != rootY {
+		// Union by size/rank
+		if dsu.size[rootX] > dsu.size[rootY] {
+			dsu.parent[rootY] = rootX
+			dsu.size[rootX] += dsu.size[rootY]
+		} else {
+			dsu.parent[rootX] = rootY
+			dsu.size[rootY] += dsu.size[rootX]
+		}
+	}
+}
+
+func main() {
+	// Example usage of DSU
+	n := 6
+	dsu := NewDSU(n)
+
+	// Perform union operations
+	dsu.Union(0, 1)
+	dsu.Union(1, 2)
+	dsu.Union(3, 4)
+
+	// Check if elements are in the same set
+	fmt.Println("Are 0 and 2 in the same set?", dsu.Find(0) == dsu.Find(2))
+	fmt.Println("Are 2 and 3 in the same set?", dsu.Find(2) == dsu.Find(3))
+}
+
+    ]]
     local cursor = vim.fn.getcurpos()
     local line = cursor[2]
     for i, snippetLine in ipairs(vim.fn.split(Template, '\n')) do

@@ -124,6 +124,7 @@ packer.startup(function(use)
     use 'Mofiqul/vscode.nvim'
     use 'shaunsingh/solarized.nvim'
     use 'joshdick/onedark.vim'
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
 
 
     -- use("folke/zen-mode.nvim")
