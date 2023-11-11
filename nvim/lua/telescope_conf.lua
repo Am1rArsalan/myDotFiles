@@ -1,6 +1,8 @@
 local builtin = require('telescope.builtin')
 
 
+print("amir is here", builtin) 
+
 -- keymaps
 vim.keymap.set('n', ';f', builtin.find_files, {})
 vim.keymap.set('n', ';g', builtin.git_files, {})
@@ -31,3 +33,5 @@ end)
 vim.keymap.set('n', '\\\\', function()
     builtin.buffers()
 end)
+
+
