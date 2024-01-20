@@ -119,10 +119,17 @@ packer.startup(function(use)
     -- themes
     use { "ellisonleao/gruvbox.nvim" }
     use 'folke/tokyonight.nvim'
+    use {
+        'svrana/neosolarized.nvim',
+        requires = { 'tjdevries/colorbuddy.nvim' }
+    }
+    use 'Mofiqul/vscode.nvim'
     use 'joshdick/onedark.vim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
+    use 'craftzdog/solarized-osaka.nvim'
 
 
+    use('justinmk/vim-sneak')
     -- use("folke/zen-mode.nvim")
     -- use("eandrju/cellular-automaton.nvim")
     -- use("laytan/cloak.nvim")
