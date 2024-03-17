@@ -59,7 +59,6 @@ packer.startup(function(use)
     }
     use 'rbong/vim-flog'
 
-    --copilot
     use 'github/copilot.vim'
 
     -- lualine
@@ -76,6 +75,12 @@ packer.startup(function(use)
     use("nvim-treesitter/playground")
     use 'nvim-treesitter/nvim-treesitter-context'
     use("theprimeagen/harpoon")
+    use {
+        'nvim-tree/nvim-tree.lua',
+        requires = {
+            'nvim-tree/nvim-web-devicons', 
+        },
+    }
 
     --undotree
     use 'mbbill/undotree'
@@ -85,7 +90,8 @@ packer.startup(function(use)
     use('MunifTanjim/prettier.nvim')
 
     -- devicons
-    use 'kyazdani42/nvim-web-devicons' -- File icons
+    use 'nvim-tree/nvim-web-devicons'
+
 
     --nerd commenter
     use 'scrooloose/nerdcommenter'

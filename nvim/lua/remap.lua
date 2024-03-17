@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
-vim.keymap.set("n", "sf", vim.cmd.Ex)
+vim.keymap.set("n", "sf", "<cmd>NvimTreeToggle<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -42,7 +42,6 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.dotfiles/nvim/.config/nvim/lua/theprimeagen/packer.lua<CR>");
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
 vim.keymap.set("n", "<leader><leader>", function()
@@ -83,20 +82,30 @@ vim.keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.ui').toggle_quick_me
 vim.keymap.set("n", "<leader>m", "<cmd>lua require('harpoon.mark').add_file()<CR>")
 
 
--- handling golang erros babyeee
 
-function InsertIfErrSnippet()
-    local current_col = vim.fn.col('.')
-    local indent = vim.fn.indent('.')
+function generateErrorCheck()
+    local current_line = vim.api.nvim_win_get_cursor(0)[1]
 
+    local line_content = vim.api.nvim_buf_get_lines(0, current_line - 1, current_line, false)[1]
 
-    local snippet = "if err != nil {\n"
-    snippet = snippet .. string.rep(' ', indent) .. "\n"
-    snippet = snippet .. string.rep(' ', indent) .. "\n"
-    snippet = snippet .. string.rep(' ', current_col - 1) .. "}"
+    if line_content:match("^%s*$") then
+        vim.api.nvim_buf_set_lines(0, current_line - 1, current_line, false, {
+            "if err != nil {",
+            "    ",
+            "}"
+        })
 
-    vim.fn.append('.', { snippet })
-    vim.fn.feedkeys('kjj', 'n')
+        vim.api.nvim_win_set_cursor(0, {current_line + 1, 5})
+    else
+        vim.api.nvim_command("normal! o")
+        vim.api.nvim_buf_set_lines(0, current_line, current_line, false, {
+            "if err != nil {",
+            "    ",
+            "}"
+        })
+
+        vim.api.nvim_win_set_cursor(0, {current_line + 1, 5})
+    end
 end
 
-vim.keymap.set('n', '<leader>ee', ':lua InsertIfErrSnippet()<CR>', {silent = true, noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>ee', ':lua generateErrorCheck()<CR>', { noremap = true, silent = true })
