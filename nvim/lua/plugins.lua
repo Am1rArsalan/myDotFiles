@@ -59,7 +59,6 @@ packer.startup(function(use)
     }
     use 'rbong/vim-flog'
 
-    use 'github/copilot.vim'
 
     -- lualine
     use 'nvim-lualine/lualine.nvim'

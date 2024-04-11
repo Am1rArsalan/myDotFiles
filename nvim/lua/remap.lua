@@ -1,6 +1,6 @@
 vim.g.mapleader = " "
 vim.g.localmapleader = " "
-vim.keymap.set("n", "sf", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "sf", "<cmd>NvimTreeFindFile<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
