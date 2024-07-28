@@ -53,12 +53,10 @@ packer.startup(function(use)
     use {
         'lewis6991/gitsigns.nvim',
     }
-    use("TimUntersberger/neogit")
     use {
         'dinhhuy258/git.nvim'
     }
     use 'rbong/vim-flog'
-
 
     -- lualine
     use 'nvim-lualine/lualine.nvim'
@@ -71,13 +69,11 @@ packer.startup(function(use)
             ts_update()
         end,
     }
-    use("nvim-treesitter/playground")
-    use 'nvim-treesitter/nvim-treesitter-context'
     use("theprimeagen/harpoon")
     use {
         'nvim-tree/nvim-tree.lua',
         requires = {
-            'nvim-tree/nvim-web-devicons', 
+            'nvim-tree/nvim-web-devicons',
         },
     }
 
@@ -102,12 +98,27 @@ packer.startup(function(use)
     use 'leoluz/nvim-dap-go' -- Install the plugin with Packer
 
 
+    --copilot.vim
+    use 'github/copilot.vim'
+
     -- rustlang
     use 'simrat39/rust-tools.nvim'
 
     -- golang
     use 'ray-x/go.nvim'
     use 'ray-x/guihua.lua'
+    use {
+        'edolphin-ydf/goimpl.nvim',
+        requires = {
+            { 'nvim-lua/plenary.nvim' },
+            { 'nvim-lua/popup.nvim' },
+            { 'nvim-telescope/telescope.nvim' },
+            { 'nvim-treesitter/nvim-treesitter' },
+        },
+        config = function()
+            require 'telescope'.load_extension 'goimpl'
+        end,
+    }
 
     -- test tree
     use {
@@ -122,21 +133,23 @@ packer.startup(function(use)
     }
 
     -- themes
-    use { "ellisonleao/gruvbox.nvim" }
-    use 'folke/tokyonight.nvim'
     use {
         'svrana/neosolarized.nvim',
         requires = { 'tjdevries/colorbuddy.nvim' }
     }
-    use 'Mofiqul/vscode.nvim'
-    use 'joshdick/onedark.vim'
+    use { 'luisiacc/gruvbox-baby' }
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use 'craftzdog/solarized-osaka.nvim'
+    use { "folke/tokyonight.nvim" }
+
 
 
     use('justinmk/vim-sneak')
-    -- use("folke/zen-mode.nvim")
+    use("folke/zen-mode.nvim")
     -- use("eandrju/cellular-automaton.nvim")
     -- use("laytan/cloak.nvim")
     -- use 'jose-elias-alvarez/null-ls.nvim'
+
+    -- md file preview
+    use "henriklovhaug/Preview.nvim"
 end)

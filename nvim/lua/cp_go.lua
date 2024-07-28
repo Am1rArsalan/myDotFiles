@@ -66,7 +66,7 @@ vim.api.nvim_set_keymap('n', '<leader>bfs', [[:lua ImportBFSSnippet()<CR>]], { n
 vim.api.nvim_set_keymap('n', '<leader>dfsm', [[:lua ImportDFSSnippet()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>bfsm', [[:lua ImportBFSMatrixSnippet()<CR>]], { noremap = true, silent = true })
 -- graph
-vim.api.nvim_set_keymap('n', '<leader>gdi', [[:lua ImportDijkstra ()<CR>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>gdi', [[:lua ImportDijkstra()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gbel', [[:lua ImportBellmanFord()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gflw', [[:lua ImportFloydWarshall()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>gka', [[:lua ImportKruskalAlgorithm()<CR>]], { noremap = true, silent = true })
@@ -156,54 +156,55 @@ function InsertQuickSortSnippet()
 end
 
 -- merge sort
-
+--
 function InsertMergeSortSnippet()
-    local current_line = vim.fn.line('.')
-    local indent = vim.fn.indent(current_line)
+    local mergeSortTemplate = [[
 
-    -- Merge Sort function
-    local mergeSortSnippet = {
-        "func mergeSort(arr []int) []int {",
-        string.rep(' ', indent + 4) .. "if len(arr) <= 1 {",
-        string.rep(' ', indent + 8) .. "return arr",
-        string.rep(' ', indent + 4) .. "}",
-        string.rep(' ', indent + 4) .. "mid := len(arr) / 2",
-        string.rep(' ', indent + 4) .. "left := mergeSort(arr[:mid])",
-        string.rep(' ', indent + 4) .. "right := mergeSort(arr[mid:])",
-        string.rep(' ', indent + 4) .. "return merge(left, right)",
-        string.rep(' ', indent) .. "}",
-    }
+func mergeSort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
 
-    -- Merge function
-    local mergeSnippet = {
-        "func merge(left, right []int) []int {",
-        string.rep(' ', indent + 4) .. "result := []int{}",
-        string.rep(' ', indent + 4) .. "for len(left) > 0 || len(right) > 0 {",
-        string.rep(' ', indent + 8) .. "if len(left) > 0 && len(right) > 0 {",
-        string.rep(' ', indent + 12) .. "if left[0] <= right[0] {",
-        string.rep(' ', indent + 16) .. "result = append(result, left[0])",
-        string.rep(' ', indent + 16) .. "left = left[1:]",
-        string.rep(' ', indent + 12) .. "} else {",
-        string.rep(' ', indent + 16) .. "result = append(result, right[0])",
-        string.rep(' ', indent + 16) .. "right = right[1:]",
-        string.rep(' ', indent + 12) .. "}",
-        string.rep(' ', indent + 8) .. "} else if len(left) > 0 {",
-        string.rep(' ', indent + 12) .. "result = append(result, left[0])",
-        string.rep(' ', indent + 12) .. "left = left[1:]",
-        string.rep(' ', indent + 8) .. "} else {",
-        string.rep(' ', indent + 12) .. "result = append(result, right[0])",
-        string.rep(' ', indent + 12) .. "right = right[1:]",
-        string.rep(' ', indent + 8) .. "}",
-        string.rep(' ', indent + 4) .. "}",
-        string.rep(' ', indent + 4) .. "return result",
-        string.rep(' ', indent) .. "}",
-    }
+	m := len(arr) / 2
 
-    -- Insert the snippets
-    vim.fn.append(current_line, mergeSortSnippet)
-    current_line = current_line + #mergeSortSnippet
-    vim.fn.append(current_line, "")
-    vim.fn.append(current_line + 1, mergeSnippet)
+	l := merge(arr[:m])
+	r := merge(arr[m:])
+
+	return merge2(l, r)
+}
+
+func merge(l, r []int) []int {
+	res := make([]int, 0, len(l)+len(r))
+	li, ri := 0, 0
+
+	for li < len(l) || ri < len(r) {
+		if li < len(l) && ri < len(r) {
+			if l[li] > r[ri] {
+				res = append(res, r[ri])
+				ri++
+			} else {
+				res = append(res, l[li])
+				li++
+			}
+		} else if li < len(l) {
+			res = append(res, l[li])
+			li++
+		} else {
+			res = append(res, r[ri])
+			ri++
+		}
+	}
+
+	return res
+}
+]]
+
+    local cursor = vim.fn.getcurpos()
+    local line = cursor[2]
+
+    for i, snippetLine in ipairs(vim.fn.split(mergeSortTemplate, '\n')) do
+        vim.fn.append(line - 1 + i, snippetLine)
+    end
 end
 
 function InsertHeapSortSnippet()

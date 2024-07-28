@@ -1,3 +1,5 @@
+--
+-- DON't forget this =>  rustup component add rust-analyzer
 --require('rust-tools').setup(opts)
 local status, rs_tools = pcall(require, "rust-tools")
 if (not status) then return end
@@ -44,3 +46,8 @@ rs_tools.setup({
         }
     },
 })
+
+
+require('lspconfig').rust_analyzer.setup{
+  capabilities = vim.lsp.protocol.make_client_capabilities(),
+}

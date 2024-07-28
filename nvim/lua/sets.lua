@@ -29,7 +29,7 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 
-vim.o.hlsearch = false
+--vim.o.hlsearch = false
 
 
 vim.opt.spell = true

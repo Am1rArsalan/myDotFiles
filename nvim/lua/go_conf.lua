@@ -17,6 +17,7 @@ local format_sync_grp = vim.api.nvim_create_augroup("GoFormat", {})
 
 
 
+print("go_conf.lua")
 
 vim.keymap.set("n", "<leader>fg", function()
    require('go.format').gofmt()
