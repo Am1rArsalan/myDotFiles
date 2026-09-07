@@ -47,4 +47,22 @@ even when its dedicated Vim colorscheme is not installed.
 - In a running instance, run `:OmarchyTheme` to re-sync without restarting.
 - On non-Omarchy machines the module is inert and `monochrome` is used.
 - After pulling, run `:PackerSync` once inside Neovim to install
-  `bjarneo/aether.nvim` (Omarchy's canonical fallback theme).
+  `bjarneo/aether.nvim` (Omarchy's canonical fallback theme) and
+  `rebelot/kanagawa.nvim` (sunny `kanagawa-lotus` theme below).
+
+### Kanagawa Lotus (sunny theme)
+
+The Omarchy theme [`bjarneo/omarchy-kanagawa-lotus-theme`](https://github.com/bjarneo/omarchy-kanagawa-lotus-theme)
+is a third-party clone, so Omarchy does not stage its `neovim.lua` — the live
+staged theme resolves to the generic `aether` template. Neovim maps the theme
+slug back to the author's intent:
+
+- `nvim/lua/plugins.lua` installs `rebelot/kanagawa.nvim`.
+- `nvim/lua/kanagawa_conf.lua` configures it (transparent, terminal colors,
+  lotus `bg #f1e9d2` to match the Omarchy `colors.toml`).
+- `nvim/lua/omarchy.lua` maps theme name `kanagawa-lotus` → colorscheme
+  `kanagawa-lotus` (light background), even though staged `neovim.lua` says
+  `aether`. Other themes are unaffected (`omablue` still uses `aether`).
+
+So `omarchy theme set kanagawa-lotus` gives you `kanagawa-lotus` in Neovim
+automatically; `:OmarchyTheme` re-syncs a running instance.
