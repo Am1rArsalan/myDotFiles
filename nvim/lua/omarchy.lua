@@ -139,6 +139,16 @@ end
 
 local FALLBACKS = { "aether","monochrome","solarized-osaka", "tokyonight-night" }
 
+-- Omarchy drops *.lua from third-party cloned themes, so their staged
+-- `neovim.lua` is the generic aether template even when the theme author
+-- ships a dedicated scheme for manual use. Map such theme slugs back to the
+-- intended Vim colorscheme (requires the plugin in plugins.lua).
+-- e.g. https://github.com/bjarneo/omarchy-kanagawa-lotus-theme ships
+-- `colorscheme = "kanagawa-lotus"` (rebelot/kanagawa.nvim) for manual use.
+local THEME_NAME_TO_SCHEME = {
+  ["kanagawa-lotus"] = "kanagawa-lotus",
+}
+
 --- Pick the colorscheme to use. Sets `vim.o.background` from the theme mode
 --- as a side effect. Returns nil when there is no Omarchy state.
 function M.preferred_scheme()
@@ -149,6 +159,12 @@ function M.preferred_scheme()
   local mode = state.colors.mode
   if mode == "light" or mode == "dark" then
     vim.o.background = mode
+  end
+  if state.name ~= nil and state.name ~= "" then
+    local override = THEME_NAME_TO_SCHEME[trim(state.name):lower()]
+    if override ~= nil and override ~= "" then
+      return override
+    end
   end
   if state.scheme ~= nil and state.scheme ~= "" then
     return state.scheme

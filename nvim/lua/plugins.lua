@@ -160,6 +160,12 @@ packer.startup(function(use)
 
     use { "ellisonleao/gruvbox.nvim" }
 
+    -- Sunny/light counterpart: https://github.com/bjarneo/omarchy-kanagawa-lotus-theme
+    -- (Omarchy drops *.lua from cloned themes, so its staged neovim.lua is the
+    -- generic aether template; nvim maps the theme name back to kanagawa-lotus
+    -- in lua/omarchy.lua). Provides kanagawa-lotus / kanagawa-wave / kanagawa-dragon.
+    use 'rebelot/kanagawa.nvim'
+
 
 
 
