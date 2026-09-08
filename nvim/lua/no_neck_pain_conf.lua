@@ -8,10 +8,19 @@ end
 nnp.setup({
     width = 120,
     autocmds = {
-        enableOnVimEnter = false,
+        enableOnVimEnter = "safe",
         enableOnTabEnter = true,
+        skipEnteringNoNeckPainBuffer = true,
     },
 })
 
--- Toggle no-neck-pain
-vim.keymap.set('n', '<leader>np', '<cmd>NoNeckPain<CR>', { desc = 'Toggle NoNeckPain' })
+-- Toggle no-neck-pain, guarded against floating windows (tree/preview,
+-- pickers). Toggling while focused in a float can miscount normal windows.
+vim.keymap.set('n', '<leader>np', function()
+    local ok, cfg = pcall(vim.api.nvim_win_get_config, vim.api.nvim_get_current_win())
+    if ok and cfg.relative ~= "" then
+        vim.notify("NoNeckPain: close the popup first", vim.log.levels.INFO)
+        return
+    end
+    vim.cmd("NoNeckPain")
+end, { desc = 'Toggle NoNeckPain' })

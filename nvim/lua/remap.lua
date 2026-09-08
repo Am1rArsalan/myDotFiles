@@ -2,7 +2,9 @@ vim.g.mapleader = " "
 vim.g.localmapleader = " "
 
 
-vim.keymap.set("n", "sf", "<cmd>NvimTreeFindFile<CR>")
+vim.keymap.set("n", "sf", function()
+    require("nvim_tree_popup").open_find_file()
+end, { desc = "Find file in centered tree popup" })
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
