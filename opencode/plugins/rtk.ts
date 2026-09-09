@@ -1,4 +1,5 @@
-import type { Plugin } from "@opencode-ai/plugin"
+import { Plugin } from "@opencode/plugin"
+import { spawnSync } from "node:child_process"
 
 // RTK OpenCode plugin — rewrites commands to use rtk for token savings.
 // Requires: rtk >= 0.23.0 in PATH.
@@ -7,33 +8,89 @@ import type { Plugin } from "@opencode-ai/plugin"
 // which is the single source of truth (src/discover/registry.rs).
 // To add or change rewrite rules, edit the Rust registry — not this file.
 
-export const RtkOpenCodePlugin: Plugin = async ({ $ }) => {
+function hasRtk(): boolean {
   try {
-    await $`which rtk`.quiet()
+    const r = spawnSync("which", ["rtk"], { encoding: "utf-8", timeout: 2000 })
+    return r.status === 0
   } catch {
+    return false
+  }
+}
+
+function rewriteCommand(command: string): string {
+  if (!command) return command
+  try {
+    const r = spawnSync("rtk", ["rewrite", command], {
+      encoding: "utf-8",
+      timeout: 2000,
+    })
+    if (r.status === 0) {
+      const out = String(r.stdout ?? "").trim()
+      if (out && out !== command) return out
+    }
+  } catch {
+    // rtk rewrite failed — pass through unchanged
+  }
+  return command
+}
+
+async function setupV2(ctx: { shell: any; tool: any }) {
+  if (!hasRtk()) {
+    console.warn("[rtk] rtk binary not found in PATH — plugin disabled")
+    return
+  }
+
+  // Covers every shell execution (including the `shell` tool).
+  await ctx.shell.hook("create.before", (event: any) => {
+    if (typeof event?.command !== "string" || !event.command) return
+    const rewritten = rewriteCommand(event.command)
+    if (rewritten !== event.command) event.command = rewritten
+  })
+
+  // Belt-and-braces: also rewrite the `shell` tool input directly
+  // (V1 used `bash`/`shell` tool names; V2 uses `shell`).
+  await ctx.tool.hook("execute.before", (event: any) => {
+    const tool = String(event?.tool ?? "").toLowerCase()
+    if (tool !== "bash" && tool !== "shell") return
+    const input = (event as any)?.input as Record<string, unknown> | undefined
+    const command = input?.command
+    if (typeof command !== "string" || !command) return
+    const rewritten = rewriteCommand(command)
+    if (rewritten !== command) input!.command = rewritten
+  })
+}
+
+function v1Hooks() {
+  if (!hasRtk()) {
     console.warn("[rtk] rtk binary not found in PATH — plugin disabled")
     return {}
   }
-
   return {
-    "tool.execute.before": async (input, output) => {
+    "tool.execute.before": async (input: any, output: any) => {
       const tool = String(input?.tool ?? "").toLowerCase()
       if (tool !== "bash" && tool !== "shell") return
       const args = output?.args
       if (!args || typeof args !== "object") return
-
       const command = (args as Record<string, unknown>).command
       if (typeof command !== "string" || !command) return
-
-      try {
-        const result = await $`rtk rewrite ${command}`.quiet().nothrow()
-        const rewritten = String(result.stdout).trim()
-        if (rewritten && rewritten !== command) {
-          ;(args as Record<string, unknown>).command = rewritten
-        }
-      } catch {
-        // rtk rewrite failed — pass through unchanged
+      const rewritten = rewriteCommand(command)
+      if (rewritten && rewritten !== command) {
+        ;(args as Record<string, unknown>).command = rewritten
       }
     },
   }
+}
+
+export default {
+  ...Plugin.define({
+    id: "rtk",
+    async setup(ctx: any) {
+      await setupV2(ctx)
+    },
+  }),
+  // V1 (`opencode`) entrypoint — ignored by V2. Keeps the same
+  // file working if you still run V1 side-by-side.
+  async server() {
+    return v1Hooks()
+  },
 }
