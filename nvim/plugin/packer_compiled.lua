@@ -355,6 +355,11 @@ _G.packer_plugins = {
     path = "/home/amir/.local/share/nvim/site/pack/packer/start/prettier.nvim",
     url = "https://github.com/MunifTanjim/prettier.nvim"
   },
+  ["rose-pine"] = {
+    loaded = true,
+    path = "/home/amir/.local/share/nvim/site/pack/packer/start/rose-pine",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["rust-tools.nvim"] = {
     loaded = true,
     path = "/home/amir/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",

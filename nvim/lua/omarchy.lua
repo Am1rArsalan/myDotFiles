@@ -147,6 +147,10 @@ local FALLBACKS = { "aether","monochrome","solarized-osaka", "tokyonight-night" 
 -- `colorscheme = "kanagawa-lotus"` (rebelot/kanagawa.nvim) for manual use.
 local THEME_NAME_TO_SCHEME = {
   ["kanagawa-lotus"] = "kanagawa-lotus",
+  -- Tokyo Night Omarchy theme (mode=dark, staged scheme tokyonight-night)
+  -- uses Rosé Pine dark instead: `rose-pine` with variant=auto picks `main`
+  -- when vim.o.background=dark (see lua/rose_pine_conf.lua).
+  ["tokyo-night"] = "rose-pine",
 }
 
 --- Pick the colorscheme to use. Sets `vim.o.background` from the theme mode

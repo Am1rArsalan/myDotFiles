@@ -166,6 +166,12 @@ packer.startup(function(use)
     -- in lua/omarchy.lua). Provides kanagawa-lotus / kanagawa-wave / kanagawa-dragon.
     use 'rebelot/kanagawa.nvim'
 
+    -- Dark counterpart for Tokyo Night: https://github.com/rose-pine/neovim
+    -- (Omarchy Tokyo Night ships `tokyonight-night`; nvim maps the theme name
+    -- back to rose-pine in lua/omarchy.lua so dark mode uses Rosé Pine).
+    -- Provides rose-pine / rose-pine-main / rose-pine-moon / rose-pine-dawn.
+    use { 'rose-pine/neovim', as = 'rose-pine' }
+
 
 
 

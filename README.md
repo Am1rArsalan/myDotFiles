@@ -47,8 +47,9 @@ even when its dedicated Vim colorscheme is not installed.
 - In a running instance, run `:OmarchyTheme` to re-sync without restarting.
 - On non-Omarchy machines the module is inert and `monochrome` is used.
 - After pulling, run `:PackerSync` once inside Neovim to install
-  `bjarneo/aether.nvim` (Omarchy's canonical fallback theme) and
-  `rebelot/kanagawa.nvim` (sunny `kanagawa-lotus` theme below).
+  `bjarneo/aether.nvim` (Omarchy's canonical fallback theme),
+  `rebelot/kanagawa.nvim` (sunny `kanagawa-lotus` theme below) and
+  `rose-pine/neovim` (dark `tokyo-night` override below).
 
 ### Kanagawa Lotus (sunny theme)
 
@@ -66,3 +67,20 @@ slug back to the author's intent:
 
 So `omarchy theme set kanagawa-lotus` gives you `kanagawa-lotus` in Neovim
 automatically; `:OmarchyTheme` re-syncs a running instance.
+
+### Rose Pine (Tokyo Night dark mode)
+
+When the system theme is `tokyo-night` (dark), Neovim uses
+[Rosé Pine](https://github.com/rose-pine/neovim) in dark mode instead of
+`tokyonight-night`:
+
+- `nvim/lua/plugins.lua` installs `rose-pine/neovim`.
+- `nvim/lua/rose_pine_conf.lua` configures it (transparent, terminal colors,
+  `variant = "auto"` + `dark_variant = "main"` so dark background picks the
+  dark `main` variant).
+- `nvim/lua/omarchy.lua` maps theme name `tokyo-night` → colorscheme
+  `rose-pine` (dark background), even though staged `neovim.lua` says
+  `tokyonight-night`. Other themes are unaffected.
+
+So `omarchy theme set tokyo-night` gives you `rose-pine` (dark `main`) in
+Neovim automatically; `:OmarchyTheme` re-syncs a running instance.
