@@ -1,12 +1,17 @@
-import { Plugin } from "@opencode/plugin"
-import { spawnSync } from "node:child_process"
-
 // RTK OpenCode plugin — rewrites commands to use rtk for token savings.
 // Requires: rtk >= 0.23.0 in PATH.
 //
 // This is a thin delegating plugin: all rewrite logic lives in `rtk rewrite`,
 // which is the single source of truth (src/discover/registry.rs).
 // To add or change rewrite rules, edit the Rust registry — not this file.
+//
+// NOTE: intentionally no `import { Plugin } from "@opencode/plugin"`.
+// Plugin.define() is only a type helper; importing it breaks loading when
+// the resolver runs from the project directory instead of
+// ~/.config/opencode (see "Cannot find package '@opencode/plugin'").
+// A plain default export with `id` + `setup()` loads in V2, and `server()`
+// keeps V1 working.
+import { spawnSync } from "node:child_process"
 
 function hasRtk(): boolean {
   try {
@@ -82,12 +87,10 @@ function v1Hooks() {
 }
 
 export default {
-  ...Plugin.define({
-    id: "rtk",
-    async setup(ctx: any) {
-      await setupV2(ctx)
-    },
-  }),
+  id: "rtk",
+  async setup(ctx: any) {
+    await setupV2(ctx)
+  },
   // V1 (`opencode`) entrypoint — ignored by V2. Keeps the same
   // file working if you still run V1 side-by-side.
   async server() {
