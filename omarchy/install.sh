@@ -32,9 +32,17 @@ if ! command -v omarchy >/dev/null 2>&1; then
   exit 1
 fi
 
-if ! pacman -Q nordzy-cursors >/dev/null 2>&1; then
-  omarchy pkg aur add nordzy-cursors
+if ! pacman -Q apple_cursor >/dev/null 2>&1; then
+  omarchy pkg aur add apple_cursor
 fi
+
+# Upstream ships white hand cursors in both variants; patch the black
+# theme to a black hand like real macOS (idempotent, stdlib only).
+for cursor_dir in /usr/share/icons/macOS "$HOME/.icons/macOS" "$HOME/.local/share/icons/macOS"; do
+  if [[ -f $cursor_dir/cursors/hand1 ]]; then
+    python3 "$dotfiles_dir/cursors/black_hands.py" "$cursor_dir"
+  fi
+done
 
 if [[ ! -x $HOME/.cargo/bin/speedy ]]; then
   if ! command -v cargo >/dev/null 2>&1; then
@@ -54,17 +62,17 @@ link_config "$dotfiles_dir/hypr/looknfeel.lua" "$config_home/hypr/looknfeel.lua"
 link_config "$dotfiles_dir/themes/omablue" "$config_home/omarchy/themes/omablue"
 
 if command -v gsettings >/dev/null 2>&1; then
-  gsettings set org.gnome.desktop.interface cursor-theme 'Nordzy-cursors-white'
+  gsettings set org.gnome.desktop.interface cursor-theme 'macOS'
   gsettings set org.gnome.desktop.interface cursor-size 24
 fi
 
 if command -v systemctl >/dev/null 2>&1; then
-  systemctl --user set-environment XCURSOR_THEME=Nordzy-cursors-white XCURSOR_SIZE=24
+  systemctl --user set-environment XCURSOR_THEME=macOS XCURSOR_SIZE=24
 fi
 
 if [[ -n ${HYPRLAND_INSTANCE_SIGNATURE:-} ]]; then
   hyprctl reload
-  hyprctl setcursor Nordzy-cursors-white 24
+  hyprctl setcursor macOS 24
 
   config_errors=$(hyprctl configerrors)
   if [[ -n $config_errors ]]; then

@@ -19,7 +19,7 @@ Tracked configuration:
 - OmaBlue theme and blue-and-white wallpaper set
 - English/Persian keyboard layouts with `Alt + Shift` switching
 - Speedy on `Super + Shift + I`
-- Nordzy white-and-blue cursor theme
+- Apple black cursor theme (`macOS` from AUR `apple_cursor`, hand cursors patched to black via `omarchy/cursors/black_hands.py`)
 
 Run this from an Omarchy desktop session after cloning the repository:
 

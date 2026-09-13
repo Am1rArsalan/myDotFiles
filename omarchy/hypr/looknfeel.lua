@@ -1,3 +1,3 @@
--- High-contrast white pointer with cool blue accents.
-hl.env("XCURSOR_THEME", "Nordzy-cursors-white")
+-- Apple black pointer (macOS, black base with white outline).
+hl.env("XCURSOR_THEME", "macOS")
 hl.env("XCURSOR_SIZE", "24")
