@@ -137,7 +137,7 @@ function M.reload()
   return M.load()
 end
 
-local FALLBACKS = { "aether","monochrome","solarized-osaka", "tokyonight-night" }
+local FALLBACKS = { "monochrome","aether", "solarized-osaka", "tokyonight-night" }
 
 -- Omarchy drops *.lua from third-party cloned themes, so their staged
 -- `neovim.lua` is the generic aether template even when the theme author
@@ -151,6 +151,11 @@ local THEME_NAME_TO_SCHEME = {
   -- uses Rosé Pine dark instead: `rose-pine` with variant=auto picks `main`
   -- when vim.o.background=dark (see lua/rose_pine_conf.lua).
   ["tokyo-night"] = "rose-pine",
+  ["anonymous"] = "monochrome",
+  ["batou"] = "monochrome",
+  ["deadspace"] = "monochrome",
+  ["manga"] = "monochrome",
+  ["vantablack"] = "monochrome",
 }
 
 --- Pick the colorscheme to use. Sets `vim.o.background` from the theme mode
